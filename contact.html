@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelPlay | Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-top: 3px solid var(--primary);
+            
+        }
+        
+        .contact-card:hover {
+            
+           box-shadow: 0 10px 20px rgba(0, 255, 0, 0.1); 
+        }
+        
+        .contact-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-card a {
+            display: block;
+            margin: 0.5rem 0;
+            
+        }
+        
+        .contact-card a:hover {
+            color: var(--secondary);
+        }
+        
+        .required-field::after {
+            content: " *";
+            color: red;
+        }
+        
+        .faq-item {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+        }
+        
+        .faq-item h3 {
+            padding: 1rem 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.3s;
+        }
+        
+        .faq-item h3:hover {
+            color: var(--secondary);
+        }
+        
+
+        
+    </style>
+</head>
+<body>
+    
+    <nav id="main-nav">
+        <div class="nav-container">
+            <div id="logo">
+                <span style="color: #00ff00;">Pixel</span><span style="color: #ff00ff;">Play</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="tips.html">Tips</a></li>
+                <li><a href="members.html">Team</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+           
+        </div>
+    </nav>
+
+   
+    <main class="container">
+        <h1 class="page-title">Get In Touch</h1>
+        
+        
+        <section class="contact-methods">
+            <div class="contact-card">
+                <h3><i class="fas fa-envelope"></i> Email Us</h3>
+                <a href="mailto:contact@pixelplay.com">contact@pixelplay.com</a>
+                <a href="mailto:support@pixelplay.com">support@pixelplay.com</a>
+                <p>Response time: 24-48 hours</p>
+            </div>
+            
+            <div class="contact-card">
+                <h3><i class="fas fa-phone"></i> Call Us</h3>
+                <a href="tel:+18005551234">+1 (800) 555-1234</a>
+                <p>Monday-Friday: 9AM-5PM EST</p>
+            </div>
+            
+            <div class="contact-card">
+                <h3><i class="fas fa-map-marker-alt"></i> Visit Us</h3>
+                <address>
+                    123 Gaming Street<br>
+                    Virtual City, VC 10001<br>
+                    Metaverse
+                </address>
+            </div>
+        </section>
+        
+        
+        <section class="contact-form-section">
+            <h2>Send a Message</h2>
+            <form id="contact-form" onsubmit="return validateContactForm()">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" class="required-field">Name:</label>
+                        <input type="text" id="name" required 
+                               
+                               title="Minimum 3 letters, no numbers"> 
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="required-field">Email:</label>
+                        <input type="email" id="email" required
+                               placeholder="your.email@example.com">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject:</label>
+                    <select id="subject">
+                        <option value="general">General Inquiry</option>
+                        <option value="support">Technical Support</option>
+                        <option value="business">Business Partnership</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message" class="required-field">Message:</label>
+                    <textarea id="message" required 
+                              placeholder="Type your message here..." 
+                              minlength="20"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="newsletter" checked>
+                        Subscribe to our newsletter
+                    </label>
+                </div>
+                
+                <button type="submit" class="cta-button">Send Message</button>
+            </form>
+        </section>
+        
+        
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-answer">
+                    <h3 >How do I report a bug? </h3>
+                    <p>Please use our contact form and select "Technical Support" as the subject. Include as much detail as possible about the bug, including screenshots if available. Our team typically responds to bug reports within 24-48 hours.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-answer">
+                       <h3 >Do you offer refunds?</h3>
+                    <p>We offer refunds within 14 days of purchase if you've played less than 2 hours of the game. Please contact our support team with your purchase details. Refunds are processed within 5-7 business days.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <h3 >How can I join your team? </h3>
+                <div class="faq-answer">
+                    <p>We're always looking for talented developers and designers! Check our "Team" page for current openings and send us your portfolio and resume using the "Business Partnership" option in our contact form.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <h3 >Where can I find game tutorials? </h3>
+                <div class="faq-answer">
+                    <p>Visit our "Tips" section for comprehensive game guides and tutorials. We regularly update this section with new content. You can also subscribe to our newsletter for weekly tutorial highlights.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <h3 >Do you have a mobile app? </h3>
+                <div class="faq-answer">
+                    <p>Our mobile app is currently in development and will be available on both iOS and Android platforms by the end of this year. Sign up for our newsletter to be notified when it launches!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   </body>
+</html>

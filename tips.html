@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelPlay | Gaming Tips</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        .tip-category {
+            background: linear-gradient(135deg, rgba(0,255,0,0.1) 0%, rgba(255,0,255,0.1) 100%);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .difficulty-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        
+        .beginner { background-color: #4CAF50; }
+        .intermediate { background-color: #FFC107; color: #000; }
+        .advanced { background-color: #F44336; }
+    </style>
+</head>
+<body>
+    
+    <nav id="main-nav">
+        <div class="nav-container">
+            <div id="logo">
+                <span style="color: #00ff00;">Pixel</span><span style="color: #ff00ff;">Play</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="tips.html" class="active">Tips</a></li>
+                <li><a href="members.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+         
+
+        </div>
+    </nav>
+
+    
+    <main class="container">
+        <h1 class="page-title">Pro Gaming Tips</h1>
+        
+        
+        <div class="search-tips">
+            <input type="text" id="tip-search" placeholder="Search tips...">
+            <button onclick="searchTips()">Search</button>
+        </div>
+        
+        
+        <section class="tips-categories">
+            <div class="tip-category">
+                <h2 onclick="toggleTips('shooting')">
+                    Shooting Games 
+                    <span class="difficulty-badge beginner">Beginner</span>
+                    <span class="difficulty-badge advanced">Advanced</span>
+                </h2>
+                <div id="shooting-tips" class="tip-content">
+                    <h3>Accuracy Tips</h3>
+                    <ol>
+                        <li>Lower your sensitivity for better precision</li>
+                        <li>Practice flick shots in training modes</li>
+                        <li>Learn recoil patterns for each weapon</li>
+                    </ol>
+                    
+                    <h3>Movement Tricks</h3>
+                    <ul>
+                        <li>Bunny hopping to avoid hits</li>
+                        <li>Peek-shooting from cover</li>
+                        <li>Drop-shotting when in close combat</li>
+                    </ul>
+                    
+                    <div class="tip-media">
+                        <img src="crosshair-placement.jpg" alt="Crosshair Placement">
+                        <p>Proper crosshair placement gives you split-second advantages</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tip-category">
+                <h2 onclick="toggleTips('rpg')">
+                    RPG Games 
+                    <span class="difficulty-badge intermediate">Intermediate</span>
+                </h2>
+                <div id="rpg-tips" class="tip-content">
+                    <h3>Character Building</h3>
+                    <ol>
+                        <li>Focus on one damage type (magic or physical)</li>
+                        <li>Don't spread skill points too thin</li>
+                        <li>Specialize in either DPS, tank, or support roles</li>
+                    </ol>
+                    
+                    <h3>Questing Efficiency</h3>
+                    <ul>
+                        <li>Complete side quests in batches</li>
+                        <li>Always check for hidden objectives</li>
+                        <li>Talk to every NPC twice</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="tip-category">
+                <h2 onclick="toggleTips('racing')">
+                    Racing Games 
+                    <span class="difficulty-badge beginner">Beginner</span>
+                </h2>
+                <div id="racing-tips" class="tip-content">
+                    <h3>Cornering Techniques</h3>
+                    <ol>
+                        <li>Brake before the turn, not during</li>
+                        <li>Use the racing line as a guide</li>
+                        <li>Practice throttle control on exits</li>
+                    </ol>
+                    
+                    <div class="tip-media">
+                        <iframe width="560" height="315"     src="https://www.youtube.com/embed/doVLIwQbnWs?autoplay=0&controls=1&rel=0" 
+
+                                frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+       
+        <section class="submit-tip">
+            <h2>Share Your Tip</h2>
+            <form id="tip-form">
+                <div class="form-group">
+                    <label for="tip-game">Game:</label>
+                    <input type="text" id="tip-game" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tip-category">Category:</label>
+                    <select id="tip-category" required>
+                        <option value="">Select...</option>
+                        <option value="shooting">Shooting</option>
+                        <option value="rpg">RPG</option>
+                        <option value="racing">Racing</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tip-content">Your Tip:</label>
+                    <textarea id="tip-content" required></textarea>
+                </div>
+                
+                <button type="submit" class="cta-button">Submit Tip</button>
+            </form>
+        </section>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

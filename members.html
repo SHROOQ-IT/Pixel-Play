@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelPlay | Our Team</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+        .member-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00ff00, #ff00ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 4rem;
+            color: white;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .member-card .member-image {
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+        }
+        
+        .avatar-1 { background: linear-gradient(135deg, #00ff00, #0099ff); }
+        .avatar-2 { background: linear-gradient(135deg, #ff00ff, #ff6600); }
+        .avatar-3 { background: linear-gradient(135deg, #9900ff, #00ccff); }
+        .avatar-4 { background: linear-gradient(135deg, #ff0066, #ffcc00); }
+        .avatar-5 { background: linear-gradient(135deg, #3366ff, #00ffcc); }
+        .avatar-6 { background: linear-gradient(135deg, #cc00ff, #ff9900); }
+
+       
+        .role-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+            padding: 0 20px;
+        }
+        
+        .role-tab {
+            padding: 8px 16px;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .role-tab:hover {
+            background-color: #ddd;
+        }
+        
+        .role-tab.active {
+            background-color: #6c5ce7;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+   
+    <nav id="main-nav">
+        <div class="nav-container">
+            <div id="logo">
+                <span style="color: #00ff00;">Pixel</span><span style="color: #ff00ff;">Play</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="tips.html">Tips</a></li>
+                <li><a href="members.html" class="active">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+           
+        </div>
+    </nav>
+
+   
+    <main class="container">
+        <section class="team-intro">
+            <h1 class="page-title">Our Team</h1>
+            <p class="team-description">Computer Science and Information Technology Students at University of Tabuk</p>
+        </section>
+        
+        
+        <div class="role-tabs">
+            <button class="role-tab active" onclick="filterTeam('all')">All Members</button>
+            <button class="role-tab" onclick="filterTeam('team leader')">Team Leader</button>
+            <button class="role-tab" onclick="filterTeam('designer')">Designer</button>
+            <button class="role-tab" onclick="filterTeam('developer')">Developer</button>
+            <button class="role-tab" onclick="filterTeam('content')">Content</button>
+            <button class="role-tab" onclick="filterTeam('editor')">Editor</button>
+        </div>
+        
+        
+        <div class="team-grid" id="team-members">
+            <!-- Member 1 -->
+            <div class="member-card" data-role="team leader">
+                <div class="member-image">
+                    <div class="member-avatar avatar-1">
+                        <i class="fas fa-crown"></i> <!-- Crown icon for team leader -->
+                    </div>
+                    <div class="role-badge development">Team Leader</div>
+                </div>
+                <div class="member-info">
+                    <h3>Omneih Alanzi</h3>
+                    <span class="student-id">ID: 451003602</span>
+                    <p class="member-bio">Coordinates team members and reviews final work</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+           
+            <div class="member-card" data-role="designer">
+                <div class="member-image">
+                    <div class="member-avatar avatar-2">
+                        <i class="fas fa-paint-brush"></i> 
+                    </div>
+                    <div class="role-badge design">Designer</div>
+                </div>
+                <div class="member-info">
+                    <h3>Rahaf Aljohani</h3>
+                    <span class="student-id">ID: 441002611</span>
+                    <p class="member-bio">Responsible for UI/UX design and visual elements</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="member-card" data-role="content">
+                <div class="member-image">
+                    <div class="member-avatar avatar-3">
+                        <i class="fas fa-keyboard"></i> 
+                    </div>
+                    <div class="role-badge content">Content</div>
+                </div>
+                <div class="member-info">
+                    <h3>Nada Awad</h3>
+                    <span class="student-id">ID: 451000109</span>
+                    <p class="member-bio">Creates written content and ensures quality</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-medium"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="member-card" data-role="developer">
+                <div class="member-image">
+                    <div class="member-avatar avatar-4">
+                        <i class="fas fa-code"></i> 
+                    </div>
+                    <div class="role-badge development">Developer</div>
+                </div>
+                <div class="member-info">
+                    <h3>Shroog Alenzi</h3>
+                    <span class="student-id">ID: 441008232</span>
+                    <p class="member-bio">Develops interactive features and frontend</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-codepen"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="member-card" data-role="designer">
+                <div class="member-image">
+                    <div class="member-avatar avatar-5">
+                        <i class="fas fa-palette"></i> 
+                    </div>
+                    <div class="role-badge design">Designer</div>
+                </div>
+                <div class="member-info">
+                    <h3>Nour Al-Atwi</h3>
+                    <span class="student-id">ID: 431002439</span>
+                    <p class="member-bio">Creates color schemes and visual assets</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="member-card" data-role="editor">
+                <div class="member-image">
+                    <div class="member-avatar avatar-6">
+                        <i class="fas fa-edit"></i> 
+                    </div>
+                    <div class="role-badge content">Editor</div>
+                </div>
+                <div class="member-info">
+                    <h3>Nouf Mohammed</h3>
+                    <span class="student-id">ID: 421004106</span>
+                    <p class="member-bio">Reviews and edits all content</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-goodreads"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <section class="project-info">
+            <h2>About This Project</h2>
+            <p>This website was developed as a web development course project, showcasing our skills in HTML, CSS, and JavaScript through a complete gaming website.</p>
+            <div class="project-meta">
+                <p><strong>Course:</strong> Web Development</p>
+                <p><strong>University:</strong> University of Tabuk</p>
+                <p><strong>Submission Date:</strong> [Insert Date]</p>
+            </div>
+        </section>
+    </main>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

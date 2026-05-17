@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelPlay | Ultimate Gaming Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        #hero-banner {
+            width: 3000px;
+            height: 300px;
+            border: 4px solid #00ff00;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <nav id="main-nav">
+        <div class="nav-container">
+            <div id="logo">
+                <span style="color: #00ff00;">Pixel</span><span style="color: #ff00ff;">Play</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="tips.html">Tips</a></li>
+                <li><a href="members.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    
+    <header class="hero">
+        <div id="hero-banner">
+            <img src="assets/images/gaming-banner.jpg" alt="Gaming Collage" class="hero-image">
+            <div class="hero-overlay">
+                <h1 id="main-title">Welcome to <span>Pixel</span><span>Play</span></h1>
+                <p class="tagline">Your ultimate gaming destination</p>
+                <button class="cta-button" onclick="location.href='games.html'">Explore Games</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="featured-video">
+            <h2><span class="highlight">Featured</span> Gameplay</h2>
+            <div class="video-container">
+                <iframe     src="https://www.youtube.com/embed/bBReGR1-yvM?autoplay=0&controls=1" 
+
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+            <div class="video-controls">
+                <button class="video-btn like-btn" onclick="likeVideo()">
+                    <span id="like-count">0</span> Likes
+                </button>
+                <button class="video-btn share-btn" onclick="shareVideo()">Share</button>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <h3>Join Our Gaming Community</h3>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="cta-button">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

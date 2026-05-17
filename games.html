@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelPlay | Game Catalog</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        .rating {
+            color: gold;
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+        
+        .rating > span {
+            display: inline-block;
+            position: relative;
+            width: 1.1em;
+        }
+        
+        .rating > span:hover:before,
+        .rating > span:hover ~ span:before {
+            content: "★";
+                    
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+   
+    <nav id="main-nav">
+        <div class="nav-container">
+            <div id="logo">
+                <span style="color: #00ff00;">Pixel</span><span style="color: #ff00ff;">Play</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html" class="active">Games</a></li>
+                <li><a href="tips.html">Tips</a></li>
+                <li><a href="members.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+           
+        </div>
+    </nav>
+
+    
+    <main class="container">
+        <h1 class="page-title">Game Catalog</h1>
+        
+        <!-- Game Search -->
+        <section class="game-search">
+            <input type="text" id="search-input" placeholder="Search games..." onkeyup="searchGames()">
+            <div class="filters">
+                <select id="genre-filter">
+                    <option value="all">All Genres</option>
+                    <option value="action">Action</option>
+                    <option value="rpg">RPG</option>
+                    <option value="strategy">Strategy</option>
+                    <option value="adventure">Adventure</option>
+                </select>
+                <select id="platform-filter">
+                    <option value="all">All Platforms</option>
+                    <option value="pc">PC</option>
+                    <option value="console">Console</option>
+                    <option value="mobile">Mobile</option>
+                </select>
+            </div>
+        </section>
+        
+       
+        <section class="game-table-section">
+            <table id="game-table">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable(0)">Game Title ▲▼</th>
+                        <th onclick="sortTable(1)">Genre ▲▼</th>
+                        <th onclick="sortTable(2)">Platform ▲▼</th>
+                        <th onclick="sortTable(3)">Release Date ▲▼</th>
+                        <th>Rating</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cyberpunk Neon</td>
+                        <td>Action</td>
+                        <td>PC, PS5</td>
+                        <td>2023-10-15</td>
+                        <td>
+                            <div class="rating">
+                                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                <span class="rating-text">4.5/5</span>
+                            </div>
+                        </td>
+                        <td><button class="download-btn">Download</button></td>
+                    </tr>
+                    <tr>
+                        <td>Pixel Quest</td>
+                        <td>Adventure</td>
+                        <td>Switch, Mobile</td>
+                        <td>2023-08-22</td>
+                        <td>
+                            <div class="rating">
+                                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                <span class="rating-text">4.2/5</span>
+                            </div>
+                        </td>
+                        <td><button class="download-btn">Download</button></td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </section>
+        
+      
+        <section class="upcoming-games">
+            <h2>Coming Soon</h2>
+            <div class="game-cards">
+                <div class="game-card">
+                    <img src="upcoming1.jpg" alt="Retro Racer">
+                    <h3>Retro Racer</h3>
+                    <p class="release-date">Release: Dec 15, 2023</p>
+                    <button class="wishlist-btn" onclick="addToWishlist(this)">+ Wishlist</button>
+                </div>
+                <div class="game-card">
+                    <img src="upcoming2.jpg" alt="Neon Fighter">
+                    <h3>Neon Fighter</h3>
+                    <p class="release-date">Release: Jan 2024</p>
+                    <button class="wishlist-btn" onclick="addToWishlist(this)">+ Wishlist</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+   
+</body>
+</html>
