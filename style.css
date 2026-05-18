@@ -1,4 +1,3 @@
-
 :root {
     --primary: #00ff00;
     --secondary: #ff00ff;
@@ -13,6 +12,10 @@
     box-sizing: border-box;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Ubuntu Mono', monospace;
     background-color: var(--dark);
@@ -22,6 +25,7 @@ body {
 
 h1, h2, h3 {
     font-family: 'Press Start 2P', cursive;
+    line-height: 1.4;
 }
 
 a {
@@ -31,6 +35,12 @@ a {
 
 a:hover {
     color: var(--secondary);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .container {
@@ -43,7 +53,6 @@ a:hover {
 .highlight {
     color: var(--secondary);
 }
-
 
 #main-nav {
     background-color: var(--gray);
@@ -58,6 +67,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+    gap: 1rem;
 }
 
 #logo {
@@ -69,6 +79,7 @@ a:hover {
     display: flex;
     list-style: none;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -77,27 +88,28 @@ a:hover {
     border-radius: 4px;
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
     background-color: var(--primary);
     color: var(--dark);
 }
 
-
-
-
 .hero {
     position: relative;
+    overflow: hidden;
 }
 
 #hero-banner {
+    width: 100%;
+    max-width: 1200px;
     border-radius: 8px;
     margin: 1rem auto;
-    max-width: 1200px;
+    overflow: hidden;
 }
 
 .hero-image {
     width: 100%;
-    height: 100%;
+    min-height: 380px;
     object-fit: cover;
     filter: brightness(0.7);
 }
@@ -108,7 +120,7 @@ a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    width: 100%;
+    width: 90%;
     padding: 0 1rem;
 }
 
@@ -131,7 +143,6 @@ a:hover {
     margin-bottom: 2rem;
 }
 
-/* ===== Buttons ===== */
 .cta-button {
     background-color: var(--primary);
     color: var(--dark);
@@ -143,8 +154,6 @@ a:hover {
     border-radius: 4px;
     text-transform: uppercase;
 }
-
-
 
 .featured-video {
     margin: 3rem 0;
@@ -168,8 +177,7 @@ a:hover {
 
 .video-container iframe {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
 }
@@ -199,7 +207,6 @@ a:hover {
     color: var(--light);
 }
 
-
 .newsletter {
     background-color: rgba(0, 255, 0, 0.1);
     padding: 2rem;
@@ -221,7 +228,6 @@ a:hover {
     background-color: transparent;
     color: var(--light);
 }
-
 
 footer {
     background-color: var(--gray);
@@ -252,42 +258,6 @@ footer {
     filter: invert(0.5) sepia(1) saturate(5) hue-rotate(300deg);
 }
 
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-
-    .nav-links {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: var(--gray);
-        width: 100%;
-        text-align: center;
-        gap: 0;
-    }
-
-    .nav-links.active {
-        left: 0;
-    }
-
-    .nav-links li {
-        margin: 16px 0;
-    }
-
-    #main-title {
-        font-size: 2rem;
-    }
-
-    .newsletter input {
-        margin-right: 0;
-        margin-bottom: 1rem;
-        width: 100%;
-    }
-}
-
-
 .page-title {
     text-align: center;
     margin: 2rem 0;
@@ -295,7 +265,6 @@ footer {
     color: var(--primary);
     text-shadow: 2px 2px 0 var(--secondary);
 }
-
 
 .game-search {
     margin: 2rem 0;
@@ -324,6 +293,7 @@ footer {
     border-radius: 4px;
     margin-left: 10px;
 }
+
 select {
     background-color: rgba(255, 255, 255, 0.1);
     color: var(--light);
@@ -333,7 +303,6 @@ select {
     font-family: inherit;
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2300ff00' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 10px center;
     padding-right: 30px;
@@ -344,7 +313,8 @@ select option {
     color: #333;
 }
 
-select:hover, select:focus {
+select:hover,
+select:focus {
     border-color: var(--secondary);
     outline: none;
     box-shadow: 0 0 0 2px rgba(255, 0, 255, 0.2);
@@ -361,7 +331,8 @@ select:hover, select:focus {
     margin: 1rem 0;
 }
 
-#game-table th, #game-table td {
+#game-table th,
+#game-table td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid var(--primary);
@@ -386,7 +357,6 @@ select:hover, select:focus {
     color: var(--light);
 }
 
-
 .download-btn {
     background-color: var(--primary);
     color: var(--dark);
@@ -401,7 +371,6 @@ select:hover, select:focus {
     background-color: var(--secondary);
 }
 
-/* Upcoming Games */
 .upcoming-games {
     margin: 3rem 0;
 }
@@ -414,7 +383,7 @@ select:hover, select:focus {
 
 .game-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 2rem;
 }
 
@@ -460,58 +429,6 @@ select:hover, select:focus {
     color: var(--dark);
 }
 
-
-@media (max-width: 768px) {
-    #game-table {
-        display: block;
-    }
-    
-    #game-table thead {
-        display: none;
-    }
-    
-    #game-table tr {
-        display: block;
-        margin-bottom: 1rem;
-        border: 1px solid var(--primary);
-        border-radius: 4px;
-    }
-    
-    #game-table td {
-        display: flex;
-        justify-content: space-between;
-        padding: 8px 12px;
-        border-bottom: 1px solid rgba(0, 255, 0, 0.1);
-    }
-    
-    #game-table td:before {
-        content: attr(data-label);
-        font-weight: bold;
-        margin-right: 1rem;
-        color: var(--primary);
-    }
-    
-    .game-search {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    #search-input {
-        width: 100%;
-    }
-    
-    .filters {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .filters select {
-        margin-left: 0;
-        width: 48%;
-    }
-}
-
-
 .search-tips {
     margin: 2rem 0;
     display: flex;
@@ -556,7 +473,8 @@ select:hover, select:focus {
     color: var(--secondary);
 }
 
-.tip-content ol, .tip-content ul {
+.tip-content ol,
+.tip-content ul {
     margin-left: 1.5rem;
     padding: 0.5rem 0;
 }
@@ -576,9 +494,9 @@ select:hover, select:focus {
 }
 
 .submit-tip {
-  background-color:var(--dark);
+    background-color: var(--dark);
     padding: 2rem;
-color: #ffffff;
+    color: #ffffff;
     border-radius: 8px;
     margin-top: 2rem;
 }
@@ -610,7 +528,6 @@ color: #ffffff;
     border-radius: 4px;
 }
 
-
 .form-group textarea {
     min-height: 150px;
     resize: vertical;
@@ -631,25 +548,13 @@ color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 }
 
 .faq-answer {
     padding: 0 1rem 1rem;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .contact-methods {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ===== Team Page Styles ===== */
 .team-description {
     color: #aaa;
     font-size: 1.2rem;
@@ -658,7 +563,7 @@ color: #ffffff;
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
     margin: 2rem 0;
 }
@@ -756,18 +661,188 @@ color: #ffffff;
     border-radius: 8px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
+    .container {
+        width: 92%;
+        padding: 1.5rem 0;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    #logo {
+        font-size: 1rem;
+    }
+
+    .nav-links {
+        position: static;
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+    }
+
+    .hero-image {
+        min-height: 330px;
+    }
+
+    #main-title {
+        font-size: 1.4rem;
+        line-height: 1.7;
+        text-shadow: 2px 2px 0 var(--secondary);
+    }
+
+    .tagline {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-button {
+        width: 100%;
+        max-width: 280px;
+        font-size: 0.65rem;
+        padding: 12px 14px;
+    }
+
+    .featured-video h2,
+    .page-title {
+        font-size: 1.3rem;
+    }
+
+    .video-controls {
+        flex-direction: column;
+    }
+
+    .video-btn {
+        width: 100%;
+    }
+
+    .newsletter {
+        padding: 1.5rem;
+    }
+
+    .newsletter input {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    .game-search {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #search-input {
+        width: 100%;
+    }
+
+    .filters {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .filters select {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #game-table {
+        display: block;
+    }
+
+    #game-table thead {
+        display: none;
+    }
+
+    #game-table tr {
+        display: block;
+        margin-bottom: 1rem;
+        border: 1px solid var(--primary);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    #game-table td {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 8px 12px;
+        border-bottom: 1px solid rgba(0, 255, 0, 0.1);
+        text-align: right;
+    }
+
+    #game-table td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        color: var(--primary);
+        text-align: left;
+    }
+
+    .game-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .search-tips {
+        flex-direction: column;
+    }
+
+    .search-tips button {
+        width: 100%;
+    }
+
+    .tip-content {
+        padding: 0 0.5rem 1rem 1rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
     .team-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .member-card {
         max-width: 100%;
     }
-    
-    .role-tabs {
+
+    .member-stats {
         flex-direction: column;
-        align-items: stretch;
+    }
+
+    .join-team {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #main-title {
+        font-size: 1.1rem;
+    }
+
+    .page-title {
+        font-size: 1.1rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    .hero-image {
+        min-height: 300px;
+    }
+
+    .member-image {
+        height: 220px;
     }
 }
