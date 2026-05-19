@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | PixelPlay</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="main-nav">
+        <div class="nav-container">
+            <div id="logo">
+                <span style="color:#00ff00;">Pixel</span><span style="color:#ff00ff;">Play</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="games.html">Games</a></li>
+                <li><a href="tips.html">Tips</a></li>
+                <li><a href="members.html">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="account.html" id="auth-link" class="active">Account</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1 class="page-title">My Account</h1>
+
+        <section class="profile-card">
+            <div class="profile-avatar">🎮</div>
+
+            <h2 id="welcome-user">Loading...</h2>
+            <p id="user-email"></p>
+            <p id="member-info">PixelPlay Gamer • Member since 2026</p>
+
+            <div class="profile-stats">
+                <div class="profile-stat-box">
+                    <span id="wishlist-count">0</span>
+                    <p>Saved Games</p>
+                </div>
+
+                <div class="profile-stat-box">
+                    <span id="reviews-count">0</span>
+                    <p>Reviews</p>
+                </div>
+
+                <div class="profile-stat-box">
+                    <span id="average-rating">0.0</span>
+                    <p>Avg Rating</p>
+                </div>
+            </div>
+
+            <p id="profile-badge">Badge: PixelPlay Gamer</p>
+
+            <div class="profile-actions">
+                <button class="cta-button" onclick="location.href='wishlist.html'">
+                    My Wishlist
+                </button>
+
+                <button class="cta-button" onclick="location.href='games.html'">
+                    Browse Games
+                </button>
+
+                <button class="cta-button logout-btn" id="logout-btn">
+                    Logout
+                </button>
+            </div>
+        </section>
+
+        <section class="profile-section">
+            <h2>My Reviews</h2>
+            <div id="my-reviews-list">
+                <p style="color:#ccc;">Loading reviews...</p>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="navbar-auth.js"></script>
+    <script type="module" src="account.js"></script>
+</body>
+</html>
