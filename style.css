@@ -1790,3 +1790,18 @@ select:focus {
         flex-direction: column;
     }
 }
+@media (max-width: 768px) {
+    .home-hero-content h1,
+    #main-title {
+        font-family: Arial, sans-serif !important;
+        font-size: 2rem !important;
+        line-height: 1.4;
+        text-shadow: 2px 2px 0 #ff00ff;
+    }
+
+    .cta-button,
+    .secondary-btn {
+        font-family: Arial, sans-serif !important;
+        letter-spacing: 1px;
+    }
+}
