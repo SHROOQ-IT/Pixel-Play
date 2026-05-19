@@ -74,3 +74,13 @@ window.showToast = function (message, type = "success") {
         toast.remove();
     }, 3000);
 };
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+if (menuToggle && navLinks) {
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+
+}

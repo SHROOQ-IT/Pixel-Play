@@ -1805,3 +1805,45 @@ select:focus {
         letter-spacing: 1px;
     }
 }
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(10,10,15,0.98);
+
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+
+        padding: 2rem 0;
+
+        display: none;
+
+        border-top: 1px solid rgba(255,255,255,0.1);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+
+.menu-toggle {
+    display: none;
+}
