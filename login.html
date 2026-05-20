@@ -3,82 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | PixelPlay</title>
+    <title>Sign In | PixelPlay</title>
+    <link rel="icon" type="image/png" href="assests/images/games/android-chrome-512x512.png">
+    <link rel="icon" type="image/png" href="assests/images/games/android-chrome-512x512.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav id="main-nav">
-        <div class="nav-container">
-            <div id="logo">
-                <span style="color:#00ff00;">Pixel</span><span style="color:#ff00ff;">Play</span>
-            </div>
-            <div class="menu-toggle" id="menu-toggle">
-    ☰
-</div>
-
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="games.html">Games</a></li>
-                <li><a href="tips.html">Tips</a></li>
-                <li><a href="members.html">Hub</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html" id="auth-link" class="active">Login</a></li>
-            </ul>
+<nav id="main-nav">
+    <div class="nav-container">
+        <div id="logo">
+            <span style="color:#00ff00;">Pixel</span><span style="color:#ff00ff;">Play</span>
         </div>
-    </nav>
 
-    <main class="container">
-        <h1 class="page-title">Player Access</h1>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
 
-        <section class="login-card" id="auth-card">
-            <div class="login-icon">🎮</div>
+        <ul class="nav-links">
+            <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+            <li><a href="games.html" data-en="Games" data-ar="الألعاب">Games</a></li>
+            <li><a href="tips.html" data-en="Tips" data-ar="النصائح">Tips</a></li>
+            <li><a href="members.html" data-en="Hub" data-ar="المجتمع">Hub</a></li>
+            <li><a href="about.html" data-en="About" data-ar="عن الموقع">About</a></li>
+            <li><a href="contact.html" data-en="Support" data-ar="الدعم">Support</a></li>
+<li><a href="login.html" id="auth-link" data-en="Sign In" data-ar="تسجيل الدخول">Sign In</a></li>            <li><button id="lang-toggle" class="lang-btn">AR</button></li>
+        </ul>
+    </div>
+</nav>
 
-            <h2>Welcome to PixelPlay</h2>
-            <p class="login-subtitle">Login or create an account to save games, write reviews, and build your library.</p>
+<main class="container auth-page">
+    <section class="auth-pro-card" id="auth-card">
+        <div class="auth-side">
+            <span class="hero-badge" data-en="PixelPlay Access" data-ar="دخول PixelPlay">PixelPlay Access</span>
+           <h1 data-en="Ready to Play?" data-ar="جاهز تبدأ اللعب؟">
+    Ready to Play?
+</h1>
 
-            <div class="form-group">
-                <label for="username">Name <span class="optional-text">(for new accounts)</span></label>
-                <input type="text" id="username" placeholder="Enter your player name">
+<p data-en="Create an account or sign in to save games, write reviews, share tips, and build your player library."
+   data-ar="أنشئ حسابًا أو سجّل دخولك لحفظ الألعاب، كتابة التقييمات، مشاركة النصائح، وبناء مكتبتك.">
+    Create an account or sign in to save games, write reviews, share tips, and build your player library.
+</p>
+
+        </div>
+
+        <div class="auth-form-panel">
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="show-login" data-en="Sign In" data-ar="تسجيل الدخول">Sign In</button>
+                <button class="auth-tab" id="show-register" data-en="Create Account" data-ar="إنشاء حساب">Create Account</button>
             </div>
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email">
+            <div id="login-form-box">
+                <h2 data-en="Sign In" data-ar="تسجيل الدخول">Sign In</h2>
+
+                <div class="form-group">
+                    <label for="email" data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email"
+                           data-en-placeholder="Enter your email"
+                           data-ar-placeholder="اكتب بريدك الإلكتروني">
+                </div>
+
+                <div class="form-group">
+                    <label for="password" data-en="Password" data-ar="كلمة المرور">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password"
+                           data-en-placeholder="Enter your password"
+                           data-ar-placeholder="اكتب كلمة المرور">
+                </div>
+
+                <button class="cta-button auth-main-btn" id="login-btn" data-en="Sign In" data-ar="تسجيل الدخول">
+                    Sign In
+                </button>
             </div>
 
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password">
+            <div id="register-form-box" style="display:none;">
+                <h2 data-en="Create Account" data-ar="إنشاء حساب">Create Account</h2>
+
+                <div class="form-group">
+                    <label for="username" data-en="Display Name" data-ar="اسم العرض">Display Name</label>
+                    <input type="text" id="username" placeholder="Enter your player name"
+                           data-en-placeholder="Enter your player name"
+                           data-ar-placeholder="اكتب اسم اللاعب">
+                </div>
+
+                <div class="form-group">
+                    <label for="register-email" data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                    <input type="email" id="register-email" placeholder="Enter your email"
+                           data-en-placeholder="Enter your email"
+                           data-ar-placeholder="اكتب بريدك الإلكتروني">
+                </div>
+
+                <div class="form-group">
+                    <label for="register-password" data-en="Password" data-ar="كلمة المرور">Password</label>
+                    <input type="password" id="register-password" placeholder="Create a strong password"
+                           data-en-placeholder="Create a strong password"
+                           data-ar-placeholder="أنشئ كلمة مرور قوية">
+                </div>
+
+                <p class="password-note"
+                   data-en="Use at least 8 characters with uppercase, lowercase, number, and symbol."
+                   data-ar="استخدم 8 أحرف على الأقل مع حرف كبير، حرف صغير، رقم، ورمز.">
+                    Use at least 8 characters with uppercase, lowercase, number, and symbol.
+                </p>
+
+                <button class="cta-button auth-main-btn" id="register-btn" data-en="Create Account" data-ar="إنشاء حساب">
+                    Create Account
+                </button>
             </div>
 
-            <div class="login-actions">
-                <button class="cta-button" id="login-btn">Login</button>
-                <button class="cta-button secondary-btn" id="register-btn">Register</button>
-            </div>
+            <p class="verify-note"
+               data-en="New accounts may receive a verification email. Check your inbox or spam folder."
+               data-ar="قد يصلك رابط تحقق بعد إنشاء الحساب. تحقق من البريد الوارد أو الرسائل غير المرغوبة.">
+                New accounts may receive a verification email. Check your inbox or spam folder.
+            </p>
 
             <p id="auth-message"></p>
-        </section>
+        </div>
+    </section>
 
-        <section class="login-card logged-card" id="logged-card" style="display:none;">
-            <div class="login-icon">👤</div>
+    <section class="auth-pro-card logged-card" id="logged-card" style="display:none;">
+        <div class="login-icon">👤</div>
+        <h2 id="logged-title">Already Logged In</h2>
+        <p id="logged-email"></p>
 
-            <h2 id="logged-title">Already Logged In</h2>
-            <p id="logged-email"></p>
+        <div class="login-actions">
+            <button class="cta-button" onclick="location.href='account.html'" data-en="Go to Account" data-ar="الذهاب إلى الحساب">Go to Account</button>
+            <button class="cta-button secondary-btn" onclick="location.href='games.html'" data-en="Browse Games" data-ar="تصفح الألعاب">Browse Games</button>
+            <button class="cta-button logout-btn" id="logout-btn" data-en="Logout" data-ar="تسجيل الخروج">Logout</button>
+        </div>
+    </section>
+</main>
 
-            <div class="login-actions">
-                <button class="cta-button" onclick="location.href='account.html'">Go to Account</button>
-                <button class="cta-button secondary-btn" onclick="location.href='games.html'">Browse Games</button>
-                <button class="cta-button logout-btn" id="logout-btn">Logout</button>
-            </div>
-        </section>
-    </main>
-
-    <script type="module" src="navbar-auth.js"></script>
-    <script type="module" src="auth.js"></script>
-    <footer class="site-footer">
+<footer class="site-footer">
     <p>© 2026 PixelPlay. All rights reserved.</p>
-    <span>Built with passion for gaming 🎮</span>
+    <span data-en="Built with passion for gaming 🎮" data-ar="صُنع بشغف لعالم الألعاب 🎮">
+        Built with passion for gaming 🎮
+    </span>
 </footer>
+
+<script type="module" src="navbar-auth.js"></script>
+<script type="module" src="auth.js"></script>
+<script src="script.js"></script>
+<script src="language.js"></script>
 </body>
 </html>

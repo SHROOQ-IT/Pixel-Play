@@ -9,7 +9,10 @@ export const games = [
         ratingScore: 4.8,
         status: "Trending",
         image: "assests/images/games/pubg.jpg",
-        description: "A battle royale game where players compete to be the last one standing. It is known for team strategy, survival gameplay, and intense matches."
+        description: "A battle royale game where players compete to be the last one standing. It is known for team strategy, survival gameplay, and intense matches.",
+        bestFor: "Competitive players and squad teamwork",
+        difficulty: "Medium",
+        whyPlay: "Great for players who enjoy survival, fast decisions, and team-based action."
     },
     {
         id: "fortnite",
@@ -21,7 +24,10 @@ export const games = [
         ratingScore: 4.6,
         status: "Trending",
         image: "assests/images/games/fortnite.jpg",
-        description: "A colorful battle royale game that combines shooting, building, events, and creative gameplay modes."
+        description: "A colorful battle royale game that combines shooting, building, events, and creative gameplay modes.",
+        bestFor: "Creative and competitive players",
+        difficulty: "Medium",
+        whyPlay: "Perfect if you like colorful visuals, live events, building mechanics, and fast battle royale matches."
     },
     {
         id: "minecraft",
@@ -33,7 +39,10 @@ export const games = [
         ratingScore: 4.9,
         status: "Top Rated",
         image: "assests/images/games/minecraft.avif",
-        description: "A sandbox game focused on building, crafting, survival, and creativity in an open block-based world."
+        description: "A sandbox game focused on building, crafting, survival, and creativity in an open block-based world.",
+        bestFor: "Creative players and builders",
+        difficulty: "Easy",
+        whyPlay: "A great choice for relaxing, building, exploring, and creating your own world."
     },
     {
         id: "valorant",
@@ -45,7 +54,10 @@ export const games = [
         ratingScore: 4.7,
         status: "Top Rated",
         image: "assests/images/games/valorant.webp",
-        description: "A tactical first-person shooter where teams use aim, strategy, and agent abilities to win rounds."
+        description: "A tactical first-person shooter where teams use aim, strategy, and agent abilities to win rounds.",
+        bestFor: "Tactical FPS players",
+        difficulty: "Hard",
+        whyPlay: "Best for players who enjoy precise aim, competitive teamwork, and strategic abilities."
     },
     {
         id: "genshin-impact",
@@ -57,7 +69,10 @@ export const games = [
         ratingScore: 4.6,
         status: "Trending",
         image: "assests/images/games/genshin.avif",
-        description: "An open-world RPG with exploration, character collection, quests, and elemental combat."
+        description: "An open-world RPG with exploration, character collection, quests, and elemental combat.",
+        bestFor: "Story and exploration lovers",
+        difficulty: "Easy",
+        whyPlay: "Great for players who enjoy open worlds, beautiful environments, quests, and character collection."
     },
     {
         id: "roblox",
@@ -69,7 +84,10 @@ export const games = [
         ratingScore: 4.4,
         status: "Popular",
         image: "assests/images/games/roblox.jpg",
-        description: "A platform where users can play and create different games, worlds, and social experiences."
+        description: "A platform where users can play and create different games, worlds, and social experiences.",
+        bestFor: "Casual players and creators",
+        difficulty: "Easy",
+        whyPlay: "Ideal for trying many mini-games, social experiences, and creative user-generated worlds."
     },
     {
         id: "call-of-duty-warzone",
@@ -81,7 +99,10 @@ export const games = [
         ratingScore: 4.5,
         status: "Popular",
         image: "assests/images/games/warzone.avif",
-        description: "A fast-paced battle royale shooter with realistic weapons, squads, contracts, and tactical combat."
+        description: "A fast-paced battle royale shooter with realistic weapons, squads, contracts, and tactical combat.",
+        bestFor: "Action and shooter fans",
+        difficulty: "Hard",
+        whyPlay: "Recommended for players who enjoy realistic gunplay, intense fights, and squad-based battle royale gameplay."
     },
     {
         id: "the-last-of-us",
@@ -93,7 +114,10 @@ export const games = [
         ratingScore: 4.9,
         status: "Top Rated",
         image: "assests/images/games/lastofus.avif",
-        description: "A story-driven adventure game focused on survival, emotional storytelling, and cinematic gameplay."
+        description: "A story-driven adventure game focused on survival, emotional storytelling, and cinematic gameplay.",
+        bestFor: "Story-driven players",
+        difficulty: "Medium",
+        whyPlay: "Perfect if you want emotional storytelling, cinematic gameplay, and survival adventure."
     },
     {
         id: "elden-ring",
@@ -105,7 +129,10 @@ export const games = [
         ratingScore: 4.9,
         status: "Top Rated",
         image: "assests/images/games/eldenring.jpg",
-        description: "A fantasy action RPG with open-world exploration, challenging combat, and deep character progression."
+        description: "A fantasy action RPG with open-world exploration, challenging combat, and deep character progression.",
+        bestFor: "Challenge seekers and RPG fans",
+        difficulty: "Hard",
+        whyPlay: "Best for players who enjoy deep exploration, fantasy worlds, and rewarding difficult combat."
     },
     {
         id: "among-us",
@@ -117,7 +144,10 @@ export const games = [
         ratingScore: 4.3,
         status: "Popular",
         image: "assests/images/games/amongus.jpg",
-        description: "A multiplayer social deduction game where crewmates complete tasks while impostors secretly eliminate them."
+        description: "A multiplayer social deduction game where crewmates complete tasks while impostors secretly eliminate them.",
+        bestFor: "Friends and casual groups",
+        difficulty: "Easy",
+        whyPlay: "Fun for social play, teamwork, deception, and quick matches with friends."
     },
     {
         id: "retro-racer",
@@ -129,7 +159,10 @@ export const games = [
         ratingScore: 0,
         status: "Coming Soon",
         image: "assests/images/games/retro-racer.jpg",
-        description: "A retro-inspired racing game with neon tracks, arcade-style controls, and fast-paced challenges."
+        description: "A retro-inspired racing game with neon tracks, arcade-style controls, and fast-paced challenges.",
+        bestFor: "Arcade racing fans",
+        difficulty: "Medium",
+        whyPlay: "A good pick for players who enjoy neon visuals, fast tracks, and classic arcade racing energy."
     },
     {
         id: "neon-fighter",
@@ -141,6 +174,9 @@ export const games = [
         ratingScore: 0,
         status: "Coming Soon",
         image: "assests/images/games/neon-fighter.jpg",
-        description: "An upcoming action fighting game with futuristic visuals, neon arenas, and competitive battles."
+        description: "An upcoming action fighting game with futuristic visuals, neon arenas, and competitive battles.",
+        bestFor: "Action and fighting game fans",
+        difficulty: "Medium",
+        whyPlay: "Recommended for players who like futuristic combat, quick reactions, and competitive fighting arenas."
     }
 ];

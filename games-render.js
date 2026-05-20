@@ -20,6 +20,24 @@ const modalWishlistBtn = document.getElementById("modal-wishlist-btn");
 
 let selectedGame = null;
 
+function saveRecentlyViewed(game) {
+    let viewedGames = JSON.parse(localStorage.getItem("recentlyViewedGames")) || [];
+
+    viewedGames = viewedGames.filter((item) => item.id !== game.id);
+
+    viewedGames.unshift({
+        id: game.id,
+        title: game.title,
+        genre: game.genre,
+        platform: game.platform,
+        image: game.image
+    });
+
+    viewedGames = viewedGames.slice(0, 4);
+
+    localStorage.setItem("recentlyViewedGames", JSON.stringify(viewedGames));
+}
+
 function renderGames(filteredGames = games) {
     gameTableBody.innerHTML = "";
     comingSoonContainer.innerHTML = "";
@@ -87,9 +105,20 @@ function filterGames() {
 window.openGameDetails = async function (gameId) {
     selectedGame = games.find((item) => item.id === gameId);
 
+    saveRecentlyViewed(selectedGame);
+
     modalImage.src = selectedGame.image;
     modalTitle.textContent = selectedGame.title;
     modalDescription.textContent = selectedGame.description;
+   const gameExtraInfo = document.getElementById("game-extra-info");
+
+gameExtraInfo.innerHTML = `
+    <div class="extra-game-info">
+        <p><strong>Best For:</strong> ${selectedGame.bestFor}</p>
+        <p><strong>Difficulty:</strong> ${selectedGame.difficulty}</p>
+        <p><strong>Why Play:</strong> ${selectedGame.whyPlay}</p>
+    </div>
+`;
     modalGenre.textContent = selectedGame.genre;
     modalPlatform.textContent = selectedGame.platform;
     modalRating.textContent = selectedGame.rating;

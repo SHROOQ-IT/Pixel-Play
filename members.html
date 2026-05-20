@@ -13,74 +13,92 @@
             <div id="logo">
                 <span style="color:#00ff00;">Pixel</span><span style="color:#ff00ff;">Play</span>
             </div>
-<div class="menu-toggle" id="menu-toggle">
-    ☰
-</div>
+
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="games.html">Games</a></li>
-                <li><a href="tips.html">Tips</a></li>
-                <li><a href="members.html" class="active">Hub</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html" id="auth-link">Login</a></li>
+                <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="games.html" data-en="Games" data-ar="الألعاب">Games</a></li>
+                <li><a href="tips.html" data-en="Tips" data-ar="النصائح">Tips</a></li>
+                <li><a href="members.html" class="active" data-en="Hub" data-ar="المجتمع">Hub</a></li>
+<a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>             
+<li><a href="login.html" id="auth-link" data-en="Sign In" data-ar="تسجيل الدخول">Sign In</a></li>                <li><button id="lang-toggle" class="lang-btn">AR</button></li>
             </ul>
         </div>
     </nav>
 
     <main class="container">
         <section class="hub-hero">
-            <span class="hero-badge">PixelPlay Hub</span>
-            <h1>Updates, Ideas, and Gaming Vibes</h1>
-            <p>
+            <span class="hero-badge" data-en="PixelPlay Hub" data-ar="مجتمع PixelPlay">PixelPlay Hub</span>
+
+            <h1 data-en="Updates, Ideas, and Gaming Vibes" data-ar="تحديثات، أفكار، وأجواء ألعاب">
+                Updates, Ideas, and Gaming Vibes
+            </h1>
+
+            <p data-en="Follow the latest PixelPlay updates, gaming thoughts, community highlights, and upcoming features in one place."
+               data-ar="تابع آخر تحديثات PixelPlay، أفكار الألعاب، مشاركات المجتمع، والميزات القادمة في مكان واحد.">
                 Follow the latest PixelPlay updates, gaming thoughts, community highlights,
                 and upcoming features in one place.
             </p>
         </section>
 
         <section class="hub-post-form">
-            <h2>Share a Hub Post</h2>
-            <p>Post an update, gaming thought, or community highlight.</p>
+            <h2 data-en="Share a Hub Post" data-ar="شارك منشورًا في المجتمع">Share a Hub Post</h2>
+
+            <p data-en="Post an update, gaming thought, or community highlight."
+               data-ar="انشر تحديثًا، فكرة عن الألعاب، أو مشاركة من المجتمع.">
+                Post an update, gaming thought, or community highlight.
+            </p>
 
             <form id="hub-form">
                 <div class="form-group">
-                    <label for="hub-title">Title</label>
+                    <label for="hub-title" data-en="Title" data-ar="العنوان">Title</label>
                     <input type="text" id="hub-title" placeholder="Example: New games added" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="hub-category">Category</label>
+                    <label for="hub-category" data-en="Category" data-ar="التصنيف">Category</label>
                     <select id="hub-category" required>
-                        <option value="">Select...</option>
-                        <option value="Update">Update</option>
-                        <option value="Gaming Thought">Gaming Thought</option>
-                        <option value="Community">Community</option>
-                        <option value="Future Work">Future Work</option>
+                        <option value="" data-en="Select..." data-ar="اختر...">Select...</option>
+                        <option value="Update" data-en="Update" data-ar="تحديث">Update</option>
+                        <option value="Gaming Thought" data-en="Gaming Thought" data-ar="فكرة عن الألعاب">Gaming Thought</option>
+                        <option value="Community" data-en="Community" data-ar="المجتمع">Community</option>
+                        <option value="Future Work" data-en="Future Work" data-ar="عمل مستقبلي">Future Work</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="hub-content">Content</label>
+                    <label for="hub-content" data-en="Content" data-ar="المحتوى">Content</label>
                     <textarea id="hub-content" placeholder="Write your post..." required></textarea>
                 </div>
 
-                <button type="submit" class="cta-button">Publish Post</button>
+                <button type="submit" class="cta-button" data-en="Publish Post" data-ar="نشر المنشور">
+                    Publish Post
+                </button>
             </form>
         </section>
 
         <section class="hub-feed-section">
-            <h2>Hub Feed</h2>
+            <h2 data-en="Hub Feed" data-ar="منشورات المجتمع">Hub Feed</h2>
+
             <div id="hub-posts-list">
-                <p style="color:#ccc;">Loading posts...</p>
+                <p style="color:#ccc;" data-en="Loading posts..." data-ar="جاري تحميل المنشورات...">
+                    Loading posts...
+                </p>
             </div>
         </section>
     </main>
 
+    <footer class="site-footer">
+        <p>© 2026 PixelPlay. All rights reserved.</p>
+        <span data-en="Built with passion for gaming 🎮" data-ar="صُنع بشغف لعالم الألعاب 🎮">
+            Built with passion for gaming 🎮
+        </span>
+    </footer>
+
     <script type="module" src="navbar-auth.js"></script>
     <script type="module" src="hub.js"></script>
     <script src="script.js"></script>
-    <footer class="site-footer">
-    <p>© 2026 PixelPlay. All rights reserved.</p>
-    <span>Built with passion for gaming 🎮</span>
-</footer>
+    <script src="language.js"></script>
 </body>
 </html>

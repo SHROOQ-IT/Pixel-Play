@@ -2,7 +2,8 @@ import { auth, db } from "./firebase.js";
 
 import {
     onAuthStateChanged,
-    signOut
+    signOut,
+    updateProfile
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 import {
@@ -21,11 +22,19 @@ const profileBadge = document.getElementById("profile-badge");
 const myReviewsList = document.getElementById("my-reviews-list");
 const logoutBtn = document.getElementById("logout-btn");
 
+const displayNameInput = document.getElementById("display-name-input");
+const profileImageInput = document.getElementById("profile-image-input");
+const saveProfileBtn = document.getElementById("save-profile-btn");
+const profilePhoto = document.getElementById("profile-photo");
+const defaultAvatar = document.getElementById("default-avatar");
+const profilePhotoWrapper = document.querySelector(".profile-photo-wrapper");
+
+let currentUser = null;
+
 function hideEmail(email) {
     const emailParts = email.split("@");
     const namePart = emailParts[0];
     const domainPart = emailParts[1];
-
     const visiblePart = namePart.substring(0, 5);
 
     return `${visiblePart}****@${domainPart}`;
@@ -38,16 +47,84 @@ function createStars(rating) {
     return fullStars + emptyStars;
 }
 
+function getProfileImageKey(userId) {
+    return `pixelplay-profile-image-${userId}`;
+}
+
+function loadProfileImage(userId) {
+    const savedImage = localStorage.getItem(getProfileImageKey(userId));
+
+    if (savedImage) {
+        profilePhoto.src = savedImage;
+        profilePhoto.style.display = "block";
+        defaultAvatar.style.display = "none";
+    } else {
+        profilePhoto.style.display = "none";
+        defaultAvatar.style.display = "flex";
+    }
+}
+
+function saveProfileImage(userId, file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+
+        reader.onload = () => {
+            localStorage.setItem(getProfileImageKey(userId), reader.result);
+            resolve(reader.result);
+        };
+
+        reader.onerror = () => {
+            reject("Could not upload profile image.");
+        };
+
+        reader.readAsDataURL(file);
+    });
+}
+
+profilePhotoWrapper.addEventListener("click", () => {
+    profileImageInput.click();
+});
+
+profileImageInput.addEventListener("change", async () => {
+    if (!currentUser) return;
+
+    const selectedImage = profileImageInput.files[0];
+
+    if (!selectedImage) return;
+
+    try {
+        const imageUrl = await saveProfileImage(currentUser.uid, selectedImage);
+
+        profilePhoto.src = imageUrl;
+        profilePhoto.style.display = "block";
+        defaultAvatar.style.display = "none";
+
+        showToast("Profile picture updated! 👤");
+
+    } catch (error) {
+        showToast(error.message || error, "error");
+    }
+});
+
 onAuthStateChanged(auth, async (user) => {
     if (!user) {
         window.location.href = "login.html";
         return;
     }
 
+    currentUser = user;
+
     const userName = user.displayName || "Player";
 
-    welcomeUser.textContent = `👋 Welcome, ${userName}`;
-    userEmail.textContent = hideEmail(user.email);
+const currentLang = localStorage.getItem("pixelplay-lang") || "en";
+
+welcomeUser.textContent =
+    currentLang === "ar"
+        ? `👋 مرحبًا، ${userName}`
+        : `👋 Welcome, ${userName}`;    userEmail.textContent = hideEmail(user.email);
+    displayNameInput.value = userName;
+
+    loadProfileImage(user.uid);
 
     const wishlistQuery = query(
         collection(db, "wishlists"),
@@ -101,6 +178,34 @@ onAuthStateChanged(auth, async (user) => {
         profileBadge.textContent = "Badge: Active Gamer";
     } else {
         profileBadge.textContent = "Badge: PixelPlay Gamer";
+    }
+});
+
+saveProfileBtn.addEventListener("click", async () => {
+    if (!currentUser) return;
+
+    const newDisplayName = displayNameInput.value.trim();
+
+    if (!newDisplayName) {
+        showToast("Please enter a display name.", "error");
+        return;
+    }
+
+    try {
+        await updateProfile(currentUser, {
+            displayName: newDisplayName
+        });
+
+const currentLang = localStorage.getItem("pixelplay-lang") || "en";
+
+welcomeUser.textContent =
+    currentLang === "ar"
+        ? `👋 مرحبًا، ${userName}`
+        : `👋 Welcome, ${userName}`;
+        showToast("Profile updated successfully! 👤");
+
+    } catch (error) {
+        showToast(error.message || error, "error");
     }
 });
 

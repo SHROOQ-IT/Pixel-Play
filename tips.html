@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PixelPlay | Gaming Tips</title>
+    <link rel="icon" type="image/png" href="assests/images/games/android-chrome-512x512.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,143 +14,188 @@
             <div id="logo">
                 <span style="color:#00ff00;">Pixel</span><span style="color:#ff00ff;">Play</span>
             </div>
-<div class="menu-toggle" id="menu-toggle">
-    ☰
-</div>
+
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="games.html">Games</a></li>
-                <li><a href="tips.html" class="active">Tips</a></li>
-                <li><a href="members.html">Hub</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html" id="auth-link">Login</a></li>
+                <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="games.html" data-en="Games" data-ar="الألعاب">Games</a></li>
+                <li><a href="tips.html" class="active" data-en="Tips" data-ar="النصائح">Tips</a></li>
+                <li><a href="members.html" data-en="Hub" data-ar="المجتمع">Hub</a></li>
+<a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>             
+<li><a href="login.html" id="auth-link" data-en="Sign In" data-ar="تسجيل الدخول">Sign In</a></li>                <li><button id="lang-toggle" class="lang-btn">AR</button></li>
             </ul>
         </div>
     </nav>
 
     <main class="container">
         <section class="tips-hero">
-            <span class="hero-badge">Pro Guides</span>
-            <h1>Level Up Your Gameplay</h1>
-            <p>Explore quick gaming tips, strategies, and tricks to improve your performance across different game genres.</p>
+            <span class="hero-badge" data-en="Pro Guides" data-ar="دليل احترافي">Pro Guides</span>
+
+            <h1 data-en="Level Up Your Gameplay" data-ar="طوّر مستواك في اللعب">
+                Level Up Your Gameplay
+            </h1>
+
+            <p data-en="Explore quick gaming tips, strategies, and tricks to improve your performance across different game genres."
+               data-ar="اكتشف نصائح واستراتيجيات سريعة لتحسين أدائك في مختلف أنواع الألعاب.">
+                Explore quick gaming tips, strategies, and tricks to improve your performance across different game genres.
+            </p>
         </section>
 
         <section class="tips-search-box">
             <input type="text" id="tip-search" placeholder="Search tips...">
-            <button class="cta-button" onclick="searchTips()">Search</button>
+            <button class="cta-button" onclick="searchTips()" data-en="Search" data-ar="بحث">Search</button>
         </section>
 
         <section class="tips-grid">
             <div class="pro-tip-card">
                 <div class="tip-top">
                     <span class="tip-icon">🎯</span>
-                    <span class="difficulty beginner">Beginner</span>
+                    <span class="difficulty beginner" data-en="Beginner" data-ar="مبتدئ">Beginner</span>
                 </div>
-                <h2>Shooting Games</h2>
-                <p>Improve your aim, movement, and reaction time in FPS and battle royale games.</p>
+
+                <h2 data-en="Shooting Games" data-ar="ألعاب التصويب">Shooting Games</h2>
+
+                <p data-en="Improve your aim, movement, and reaction time in FPS and battle royale games."
+                   data-ar="حسّن التصويب والحركة وسرعة الاستجابة في ألعاب التصويب والباتل رويال.">
+                    Improve your aim, movement, and reaction time in FPS and battle royale games.
+                </p>
 
                 <ul>
-                    <li>Lower sensitivity for better precision.</li>
-                    <li>Keep your crosshair at head level.</li>
-                    <li>Practice recoil control for each weapon.</li>
-                    <li>Use cover instead of standing in open areas.</li>
+                    <li data-en="Lower sensitivity for better precision." data-ar="خفّض الحساسية للحصول على دقة أفضل.">Lower sensitivity for better precision.</li>
+                    <li data-en="Keep your crosshair at head level." data-ar="حافظ على المؤشر بمستوى الرأس.">Keep your crosshair at head level.</li>
+                    <li data-en="Practice recoil control for each weapon." data-ar="تدرّب على التحكم بالارتداد لكل سلاح.">Practice recoil control for each weapon.</li>
+                    <li data-en="Use cover instead of standing in open areas." data-ar="استخدم الغطاء بدل الوقوف في أماكن مكشوفة.">Use cover instead of standing in open areas.</li>
                 </ul>
             </div>
 
             <div class="pro-tip-card">
                 <div class="tip-top">
                     <span class="tip-icon">⚔️</span>
-                    <span class="difficulty intermediate">Intermediate</span>
+                    <span class="difficulty intermediate" data-en="Intermediate" data-ar="متوسط">Intermediate</span>
                 </div>
-                <h2>RPG Games</h2>
-                <p>Build stronger characters and make better progress in story-based games.</p>
+
+                <h2 data-en="RPG Games" data-ar="ألعاب تقمص الأدوار">RPG Games</h2>
+
+                <p data-en="Build stronger characters and make better progress in story-based games."
+                   data-ar="ابنِ شخصيات أقوى وتقدم بشكل أفضل في الألعاب القصصية.">
+                    Build stronger characters and make better progress in story-based games.
+                </p>
 
                 <ul>
-                    <li>Focus on one main build direction.</li>
-                    <li>Upgrade weapons before wasting resources.</li>
-                    <li>Complete side quests for better rewards.</li>
-                    <li>Read item effects before equipping gear.</li>
+                    <li data-en="Focus on one main build direction." data-ar="ركّز على مسار بناء واحد للشخصية.">Focus on one main build direction.</li>
+                    <li data-en="Upgrade weapons before wasting resources." data-ar="طوّر الأسلحة قبل هدر الموارد.">Upgrade weapons before wasting resources.</li>
+                    <li data-en="Complete side quests for better rewards." data-ar="أنهِ المهام الجانبية للحصول على مكافآت أفضل.">Complete side quests for better rewards.</li>
+                    <li data-en="Read item effects before equipping gear." data-ar="اقرأ تأثيرات العناصر قبل استخدامها.">Read item effects before equipping gear.</li>
                 </ul>
             </div>
 
             <div class="pro-tip-card">
                 <div class="tip-top">
                     <span class="tip-icon">🏎️</span>
-                    <span class="difficulty beginner">Beginner</span>
+                    <span class="difficulty beginner" data-en="Beginner" data-ar="مبتدئ">Beginner</span>
                 </div>
-                <h2>Racing Games</h2>
-                <p>Learn smoother driving, better turns, and faster lap control.</p>
+
+                <h2 data-en="Racing Games" data-ar="ألعاب السباق">Racing Games</h2>
+
+                <p data-en="Learn smoother driving, better turns, and faster lap control."
+                   data-ar="تعلّم قيادة أكثر سلاسة، منعطفات أفضل، وتحكم أسرع في السباق.">
+                    Learn smoother driving, better turns, and faster lap control.
+                </p>
 
                 <ul>
-                    <li>Brake before entering turns.</li>
-                    <li>Follow the racing line.</li>
-                    <li>Accelerate smoothly after corners.</li>
-                    <li>Avoid oversteering on sharp turns.</li>
+                    <li data-en="Brake before entering turns." data-ar="خفف السرعة قبل دخول المنعطف.">Brake before entering turns.</li>
+                    <li data-en="Follow the racing line." data-ar="اتبع خط السباق الصحيح.">Follow the racing line.</li>
+                    <li data-en="Accelerate smoothly after corners." data-ar="تسارع بسلاسة بعد المنعطفات.">Accelerate smoothly after corners.</li>
+                    <li data-en="Avoid oversteering on sharp turns." data-ar="تجنب الانعطاف الزائد في المنعطفات الحادة.">Avoid oversteering on sharp turns.</li>
                 </ul>
             </div>
 
             <div class="pro-tip-card">
                 <div class="tip-top">
                     <span class="tip-icon">🧠</span>
-                    <span class="difficulty advanced">Advanced</span>
+                    <span class="difficulty advanced" data-en="Advanced" data-ar="متقدم">Advanced</span>
                 </div>
-                <h2>Strategy Games</h2>
-                <p>Plan smarter, manage resources, and control the game pace.</p>
+
+                <h2 data-en="Strategy Games" data-ar="ألعاب الاستراتيجية">Strategy Games</h2>
+
+                <p data-en="Plan smarter, manage resources, and control the game pace."
+                   data-ar="خطط بذكاء، أدر الموارد، وتحكم بإيقاع اللعب.">
+                    Plan smarter, manage resources, and control the game pace.
+                </p>
 
                 <ul>
-                    <li>Scout early before attacking.</li>
-                    <li>Balance economy and defense.</li>
-                    <li>Do not spend all resources at once.</li>
-                    <li>Adapt your plan based on opponents.</li>
+                    <li data-en="Scout early before attacking." data-ar="استكشف مبكرًا قبل الهجوم.">Scout early before attacking.</li>
+                    <li data-en="Balance economy and defense." data-ar="وازن بين الاقتصاد والدفاع.">Balance economy and defense.</li>
+                    <li data-en="Do not spend all resources at once." data-ar="لا تصرف كل الموارد دفعة واحدة.">Do not spend all resources at once.</li>
+                    <li data-en="Adapt your plan based on opponents." data-ar="غيّر خطتك حسب أسلوب الخصم.">Adapt your plan based on opponents.</li>
                 </ul>
             </div>
         </section>
 
         <section class="submit-tip pro-submit-tip">
-            <h2>Share Your Own Tip</h2>
-            <p>Help other players improve by sharing your favorite gaming strategy.</p>
+            <h2 data-en="Share Your Own Tip" data-ar="شارك نصيحتك الخاصة">Share Your Own Tip</h2>
+
+            <p data-en="Help other players improve by sharing your favorite gaming strategy."
+               data-ar="ساعد اللاعبين الآخرين عبر مشاركة استراتيجيتك المفضلة.">
+                Help other players improve by sharing your favorite gaming strategy.
+            </p>
 
             <form id="tip-form">
                 <div class="form-group">
-                    <label for="tip-game">Game</label>
+                    <label for="tip-game" data-en="Game" data-ar="اللعبة">Game</label>
                     <input type="text" id="tip-game" required placeholder="Example: PUBG Mobile">
                 </div>
                 
                 <div class="form-group">
-                    <label for="tip-category">Category</label>
+                    <label for="tip-category" data-en="Category" data-ar="التصنيف">Category</label>
                     <select id="tip-category" required>
-                        <option value="">Select...</option>
-                        <option value="shooting">Shooting</option>
-                        <option value="rpg">RPG</option>
-                        <option value="racing">Racing</option>
-                        <option value="strategy">Strategy</option>
-                        <option value="other">Other</option>
+                        <option value="" data-en="Select..." data-ar="اختر...">Select...</option>
+                        <option value="shooting" data-en="Shooting" data-ar="تصويب">Shooting</option>
+                        <option value="rpg" data-en="RPG" data-ar="تقمص أدوار">RPG</option>
+                        <option value="racing" data-en="Racing" data-ar="سباق">Racing</option>
+                        <option value="strategy" data-en="Strategy" data-ar="استراتيجية">Strategy</option>
+                        <option value="other" data-en="Other" data-ar="أخرى">Other</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
-                    <label for="tip-content">Your Tip</label>
+                    <label for="tip-content" data-en="Your Tip" data-ar="نصيحتك">Your Tip</label>
                     <textarea id="tip-content" required placeholder="Write your tip here..."></textarea>
                 </div>
                 
-                <button type="submit" class="cta-button">Submit Tip</button>
+                <button type="submit" class="cta-button" data-en="Submit Tip" data-ar="إرسال النصيحة">
+                    Submit Tip
+                </button>
             </form>
         </section>
-        <section class="community-tips-section">
-    <h2>Community Tips</h2>
-    <p>Tips shared by PixelPlay players.</p>
 
-    <div id="community-tips-list">
-        <p style="color:#ccc;">Loading community tips...</p>
-    </div>
-</section>
+        <section class="community-tips-section">
+            <h2 data-en="Community Tips" data-ar="نصائح المجتمع">Community Tips</h2>
+
+            <p data-en="Tips shared by PixelPlay players."
+               data-ar="نصائح يشاركها لاعبو PixelPlay.">
+                Tips shared by PixelPlay players.
+            </p>
+
+            <div id="community-tips-list">
+                <p style="color:#ccc;" data-en="Loading community tips..." data-ar="جاري تحميل نصائح المجتمع...">
+                    Loading community tips...
+                </p>
+            </div>
+        </section>
     </main>
-<script type="module" src="navbar-auth.js"></script>
-<script type="module" src="tips.js"></script>
-<script src="script.js"></script>
-<footer class="site-footer">
-    <p>© 2026 PixelPlay. All rights reserved.</p>
-    <span>Built with passion for gaming 🎮</span>
-</footer>
+
+    <footer class="site-footer">
+        <p>© 2026 PixelPlay. All rights reserved.</p>
+        <span data-en="Built with passion for gaming 🎮" data-ar="صُنع بشغف لعالم الألعاب 🎮">
+            Built with passion for gaming 🎮
+        </span>
+    </footer>
+
+    <script type="module" src="navbar-auth.js"></script>
+    <script type="module" src="tips.js"></script>
+    <script src="script.js"></script>
+    <script src="language.js"></script>
 </body>
 </html>

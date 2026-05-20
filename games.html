@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PixelPlay | Game Catalog</title>
+    <link rel="icon" type="image/png" href="assests/images/games/android-chrome-512x512.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,52 +14,52 @@
             <div id="logo">
                 <span style="color:#00ff00;">Pixel</span><span style="color:#ff00ff;">Play</span>
             </div>
-<div class="menu-toggle" id="menu-toggle">
-    ☰
-</div>
+
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="games.html" class="active">Games</a></li>
-                <li><a href="tips.html">Tips</a></li>
-                <li><a href="members.html">Hub</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html" id="auth-link">Login</a></li>
+                <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="games.html" class="active" data-en="Games" data-ar="الألعاب">Games</a></li>
+                <li><a href="tips.html" data-en="Tips" data-ar="النصائح">Tips</a></li>
+                <li><a href="members.html" data-en="Hub" data-ar="المجتمع">Hub</a></li>
+<a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>                <li><a href="login.html" id="auth-link" data-en="Login" data-ar="تسجيل الدخول">Login</a></li>
+                <li><button id="lang-toggle" class="lang-btn">AR</button></li>
             </ul>
         </div>
     </nav>
 
     <main class="container">
-        <h1 class="page-title">Game Catalog</h1>
+        <h1 class="page-title" data-en="Game Catalog" data-ar="كتالوج الألعاب">Game Catalog</h1>
         
         <section class="game-search">
             <input type="text" id="search-input" placeholder="Search games...">
 
             <div class="filters">
                 <select id="genre-filter">
-                    <option value="all">All Genres</option>
+                    <option value="all" data-en="All Genres" data-ar="كل التصنيفات">All Genres</option>
                     <option value="Battle Royale">Battle Royale</option>
-                    <option value="Action">Action</option>
-                    <option value="Adventure">Adventure</option>
+                    <option value="Action" data-en="Action" data-ar="أكشن">Action</option>
+                    <option value="Adventure" data-en="Adventure" data-ar="مغامرات">Adventure</option>
                     <option value="RPG">RPG</option>
                     <option value="FPS">FPS</option>
                     <option value="Sandbox">Sandbox</option>
-                    <option value="Racing">Racing</option>
+                    <option value="Racing" data-en="Racing" data-ar="سباق">Racing</option>
                     <option value="Social Deduction">Social Deduction</option>
                 </select>
 
                 <select id="platform-filter">
-                    <option value="all">All Platforms</option>
+                    <option value="all" data-en="All Platforms" data-ar="كل المنصات">All Platforms</option>
                     <option value="PC">PC</option>
-                    <option value="Console">Console</option>
-                    <option value="Mobile">Mobile</option>
+                    <option value="Console" data-en="Console" data-ar="كونسول">Console</option>
+                    <option value="Mobile" data-en="Mobile" data-ar="جوال">Mobile</option>
                     <option value="PS5">PS5</option>
                     <option value="Switch">Switch</option>
                 </select>
 
                 <select id="sort-filter">
-                    <option value="default">Sort By</option>
-                    <option value="rating-high">Highest Rated</option>
-                    <option value="newest">Newest</option>
+                    <option value="default" data-en="Sort By" data-ar="ترتيب حسب">Sort By</option>
+                    <option value="rating-high" data-en="Highest Rated" data-ar="الأعلى تقييمًا">Highest Rated</option>
+                    <option value="newest" data-en="Newest" data-ar="الأحدث">Newest</option>
                     <option value="az">A - Z</option>
                 </select>
             </div>
@@ -68,13 +69,13 @@
             <table id="game-table">
                 <thead>
                     <tr>
-                        <th>Game Title</th>
-                        <th>Genre</th>
-                        <th>Platform</th>
-                        <th>Release Date</th>
-                        <th>Rating</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th data-en="Game Title" data-ar="اسم اللعبة">Game Title</th>
+                        <th data-en="Genre" data-ar="التصنيف">Genre</th>
+                        <th data-en="Platform" data-ar="المنصة">Platform</th>
+                        <th data-en="Release Date" data-ar="تاريخ الإصدار">Release Date</th>
+                        <th data-en="Rating" data-ar="التقييم">Rating</th>
+                        <th data-en="Status" data-ar="الحالة">Status</th>
+                        <th data-en="Action" data-ar="الإجراء">Action</th>
                     </tr>
                 </thead>
 
@@ -83,7 +84,7 @@
         </section>
         
         <section class="upcoming-games">
-            <h2>Coming Soon</h2>
+            <h2 data-en="Coming Soon" data-ar="قريبًا">Coming Soon</h2>
             <div class="game-cards" id="coming-soon-games"></div>
         </section>
     </main>
@@ -96,6 +97,7 @@
 
             <h2 id="modal-title"></h2>
             <p id="modal-description"></p>
+            <div id="game-extra-info"></div>
 
             <div class="modal-info">
                 <span id="modal-genre"></span>
@@ -104,13 +106,13 @@
             </div>
 
             <div style="padding: 0 1.5rem 1.5rem;">
-                <button class="wishlist-btn" id="modal-wishlist-btn">
+                <button class="wishlist-btn" id="modal-wishlist-btn" data-en="+ Add to Wishlist" data-ar="+ أضف إلى مكتبتي">
                     + Add to Wishlist
                 </button>
             </div>
 
             <section class="reviews-section">
-                <h3>Player Reviews</h3>
+                <h3 data-en="Player Reviews" data-ar="تقييمات اللاعبين">Player Reviews</h3>
 
                 <div class="review-form">
                     <select id="review-rating">
@@ -123,25 +125,30 @@
 
                     <textarea id="review-text" placeholder="Write your review..."></textarea>
 
-                    <button class="cta-button" id="submit-review-btn">
+                    <button class="cta-button" id="submit-review-btn" data-en="Submit Review" data-ar="إرسال التقييم">
                         Submit Review
                     </button>
                 </div>
 
                 <div id="reviews-list">
-                    <p style="color:#ccc;">No reviews yet.</p>
+                    <p style="color:#ccc;" data-en="No reviews yet." data-ar="لا توجد تقييمات بعد.">No reviews yet.</p>
                 </div>
             </section>
         </div>
     </div>
-<script type="module" src="navbar-auth.js"></script>
-<script type="module" src="games-render.js"></script>
-<script type="module" src="wishlist.js"></script>
-<script type="module" src="reviews.js"></script>
-<script src="script.js"></script>
-<footer class="site-footer">
-    <p>© 2026 PixelPlay. All rights reserved.</p>
-    <span>Built with passion for gaming 🎮</span>
-</footer>
+
+    <footer class="site-footer">
+        <p>© 2026 PixelPlay. All rights reserved.</p>
+        <span data-en="Built with passion for gaming 🎮" data-ar="صُنع بشغف لعالم الألعاب 🎮">
+            Built with passion for gaming 🎮
+        </span>
+    </footer>
+
+    <script type="module" src="navbar-auth.js"></script>
+    <script type="module" src="games-render.js"></script>
+    <script type="module" src="wishlist.js"></script>
+    <script type="module" src="reviews.js"></script>
+    <script src="script.js"></script>
+    <script src="language.js"></script>
 </body>
 </html>

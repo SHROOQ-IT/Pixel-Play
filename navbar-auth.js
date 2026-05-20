@@ -14,10 +14,14 @@ onAuthStateChanged(auth, (user) => {
 
         authLink.textContent = `👤 ${userName}`;
         authLink.href = "account.html";
-        authLink.title = "My Account";
+
+        authLink.setAttribute("data-en", `👤 ${userName}`);
+        authLink.setAttribute("data-ar", `👤 ${userName}`);
     } else {
-        authLink.textContent = "Login";
+        authLink.textContent = "Sign In";
         authLink.href = "login.html";
-        authLink.title = "Login";
+
+        authLink.setAttribute("data-en", "Sign In");
+        authLink.setAttribute("data-ar", "تسجيل الدخول");
     }
 });

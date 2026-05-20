@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PixelPlay | Contact</title>
+    <link rel="icon" type="image/png" href="assests/images/games/android-chrome-512x512.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,108 +14,147 @@
             <div id="logo">
                 <span style="color:#00ff00;">Pixel</span><span style="color:#ff00ff;">Play</span>
             </div>
-            <div class="menu-toggle" id="menu-toggle">
-    ☰
-</div>
+
+            <div class="menu-toggle" id="menu-toggle">☰</div>
 
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="games.html">Games</a></li>
-                <li><a href="tips.html">Tips</a></li>
-                <li><a href="members.html">Hub</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-                <li><a href="login.html" id="auth-link">Login</a></li>
+                <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="games.html" data-en="Games" data-ar="الألعاب">Games</a></li>
+                <li><a href="tips.html" data-en="Tips" data-ar="النصائح">Tips</a></li>
+                <li><a href="members.html" data-en="Hub" data-ar="المجتمع">Hub</a></li>
+<a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>                <li><a href="login.html" id="auth-link" data-en="Login" data-ar="تسجيل الدخول">Login</a></li>
+                <li><button id="lang-toggle" class="lang-btn">AR</button></li>
             </ul>
         </div>
     </nav>
 
     <main class="container">
         <section class="contact-hero">
-            <span class="hero-badge">Contact PixelPlay</span>
-            <h1>Let’s Talk Gaming</h1>
-            <p>Have feedback, ideas, bug reports, or suggestions? Send a message and help improve PixelPlay.</p>
+            <span class="hero-badge" data-en="Contact PixelPlay" data-ar="تواصل مع PixelPlay">
+                Contact PixelPlay
+            </span>
+
+            <h1 data-en="Let’s Talk Gaming" data-ar="خلّنا نتكلم عن الألعاب">
+                Let’s Talk Gaming
+            </h1>
+
+            <p data-en="Have feedback, ideas, bug reports, or suggestions? Send a message and help improve PixelPlay."
+               data-ar="عندك ملاحظات، أفكار، مشاكل، أو اقتراحات؟ أرسل رسالة وساعدنا في تحسين PixelPlay.">
+                Have feedback, ideas, bug reports, or suggestions? Send a message and help improve PixelPlay.
+            </p>
         </section>
 
         <section class="contact-grid">
             <div class="contact-info-card">
-                <h3>🎮 Feedback</h3>
-                <p>Share ideas to improve games, reviews, tips, or the player experience.</p>
+                <h3 data-en="🎮 Feedback" data-ar="🎮 ملاحظات">🎮 Feedback</h3>
+                <p data-en="Share ideas to improve games, reviews, tips, or the player experience."
+                   data-ar="شارك أفكارك لتحسين الألعاب، التقييمات، النصائح، أو تجربة اللاعب.">
+                    Share ideas to improve games, reviews, tips, or the player experience.
+                </p>
             </div>
 
             <div class="contact-info-card">
-                <h3>🐞 Bug Report</h3>
-                <p>Found something broken? Report it and include as much detail as possible.</p>
+                <h3 data-en="🐞 Bug Report" data-ar="🐞 الإبلاغ عن مشكلة">🐞 Bug Report</h3>
+                <p data-en="Found something broken? Report it and include as much detail as possible."
+                   data-ar="وجدت شيئًا لا يعمل؟ أبلغ عنه مع ذكر أكبر قدر من التفاصيل.">
+                    Found something broken? Report it and include as much detail as possible.
+                </p>
             </div>
 
             <div class="contact-info-card">
-                <h3>💡 Suggestions</h3>
-                <p>Suggest new features, games, or future improvements for PixelPlay.</p>
+                <h3 data-en="💡 Suggestions" data-ar="💡 اقتراحات">💡 Suggestions</h3>
+                <p data-en="Suggest new features, games, or future improvements for PixelPlay."
+                   data-ar="اقترح ميزات جديدة، ألعاب، أو تحسينات مستقبلية لـ PixelPlay.">
+                    Suggest new features, games, or future improvements for PixelPlay.
+                </p>
             </div>
         </section>
 
         <section class="contact-form-section pro-contact-form">
-            <h2>Send a Message</h2>
+            <h2 data-en="Send a Message" data-ar="أرسل رسالة">Send a Message</h2>
 
             <form id="contact-form">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="contact-name">Name</label>
+                        <label for="contact-name" data-en="Name" data-ar="الاسم">Name</label>
                         <input type="text" id="contact-name" required placeholder="Your name">
                     </div>
 
                     <div class="form-group">
-                        <label for="contact-email">Email</label>
+                        <label for="contact-email" data-en="Email" data-ar="البريد الإلكتروني">Email</label>
                         <input type="email" id="contact-email" required placeholder="your.email@example.com">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="contact-subject">Subject</label>
+                    <label for="contact-subject" data-en="Subject" data-ar="الموضوع">Subject</label>
                     <select id="contact-subject" required>
-                        <option value="">Select...</option>
-                        <option value="Feedback">Feedback</option>
-                        <option value="Bug Report">Bug Report</option>
-                        <option value="Suggestion">Suggestion</option>
-                        <option value="Other">Other</option>
+                        <option value="" data-en="Select..." data-ar="اختر...">Select...</option>
+                        <option value="Feedback" data-en="Feedback" data-ar="ملاحظات">Feedback</option>
+                        <option value="Bug Report" data-en="Bug Report" data-ar="الإبلاغ عن مشكلة">Bug Report</option>
+                        <option value="Suggestion" data-en="Suggestion" data-ar="اقتراح">Suggestion</option>
+                        <option value="Other" data-en="Other" data-ar="أخرى">Other</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <label for="contact-message">Message</label>
+                    <label for="contact-message" data-en="Message" data-ar="الرسالة">Message</label>
                     <textarea id="contact-message" required placeholder="Write your message here..."></textarea>
                 </div>
 
-                <button type="submit" class="cta-button">Send Message</button>
+                <button type="submit" class="cta-button" data-en="Send Message" data-ar="إرسال الرسالة">
+                    Send Message
+                </button>
+
                 <p id="contact-status"></p>
             </form>
         </section>
 
         <section class="faq-section pro-faq">
-            <h2>FAQ</h2>
+            <h2 data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</h2>
 
             <div class="faq-item">
-                <h3>Can I suggest new games?</h3>
-                <p>Yes. Use the contact form and choose “Suggestion”.</p>
+                <h3 data-en="Can I suggest new games?" data-ar="هل يمكنني اقتراح ألعاب جديدة؟">
+                    Can I suggest new games?
+                </h3>
+                <p data-en="Yes. Use the contact form and choose “Suggestion”."
+                   data-ar="نعم. استخدم نموذج التواصل واختر “اقتراح”.">
+                    Yes. Use the contact form and choose “Suggestion”.
+                </p>
             </div>
 
             <div class="faq-item">
-                <h3>Can I report bugs?</h3>
-                <p>Yes. Choose “Bug Report” and describe what happened.</p>
+                <h3 data-en="Can I report bugs?" data-ar="هل يمكنني الإبلاغ عن المشاكل؟">
+                    Can I report bugs?
+                </h3>
+                <p data-en="Yes. Choose “Bug Report” and describe what happened."
+                   data-ar="نعم. اختر “الإبلاغ عن مشكلة” واشرح ما حدث.">
+                    Yes. Choose “Bug Report” and describe what happened.
+                </p>
             </div>
 
             <div class="faq-item">
-                <h3>Do I need an account?</h3>
-                <p>You can browse without an account, but saving games, writing reviews, and posting tips require login.</p>
+                <h3 data-en="Do I need an account?" data-ar="هل أحتاج إلى حساب؟">
+                    Do I need an account?
+                </h3>
+                <p data-en="You can browse without an account, but saving games, writing reviews, and posting tips require login."
+                   data-ar="يمكنك التصفح بدون حساب، لكن حفظ الألعاب وكتابة التقييمات ونشر النصائح يتطلب تسجيل الدخول.">
+                    You can browse without an account, but saving games, writing reviews, and posting tips require login.
+                </p>
             </div>
         </section>
     </main>
 
+    <footer class="site-footer">
+        <p>© 2026 PixelPlay. All rights reserved.</p>
+        <span data-en="Built with passion for gaming 🎮" data-ar="صُنع بشغف لعالم الألعاب 🎮">
+            Built with passion for gaming 🎮
+        </span>
+    </footer>
+
     <script type="module" src="navbar-auth.js"></script>
     <script type="module" src="contact.js"></script>
     <script src="script.js"></script>
-    <footer class="site-footer">
-    <p>© 2026 PixelPlay. All rights reserved.</p>
-    <span>Built with passion for gaming 🎮</span>
-</footer>
+    <script src="language.js"></script>
 </body>
 </html>
