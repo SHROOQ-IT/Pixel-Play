@@ -6,6 +6,7 @@ import {
     signOut,
     onAuthStateChanged,
     updateProfile,
+    sendPasswordResetEmail,
     sendEmailVerification
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
@@ -24,6 +25,7 @@ const registerPasswordInput = document.getElementById("register-password");
 const loginBtn = document.getElementById("login-btn");
 const registerBtn = document.getElementById("register-btn");
 const logoutBtn = document.getElementById("logout-btn");
+const forgotPasswordBtn = document.getElementById("forgot-password-btn");
 
 const showLoginBtn = document.getElementById("show-login");
 const showRegisterBtn = document.getElementById("show-register");
@@ -58,7 +60,6 @@ async function saveUserToFirestore(user, name) {
 showLoginBtn.addEventListener("click", () => {
     loginFormBox.style.display = "block";
     registerFormBox.style.display = "none";
-
     showLoginBtn.classList.add("active");
     showRegisterBtn.classList.remove("active");
 });
@@ -66,7 +67,6 @@ showLoginBtn.addEventListener("click", () => {
 showRegisterBtn.addEventListener("click", () => {
     loginFormBox.style.display = "none";
     registerFormBox.style.display = "block";
-
     showRegisterBtn.classList.add("active");
     showLoginBtn.classList.remove("active");
 });
@@ -132,6 +132,22 @@ loginBtn.addEventListener("click", async () => {
             location.reload();
         }, 800);
 
+    } catch (error) {
+        showToast(error.message, "error");
+    }
+});
+
+forgotPasswordBtn.addEventListener("click", async () => {
+    const email = emailInput.value.trim();
+
+    if (!email) {
+        showToast("Please enter your email first.", "error");
+        return;
+    }
+
+    try {
+        await sendPasswordResetEmail(auth, email);
+        showToast("Password reset email sent. Check your inbox. ✉️");
     } catch (error) {
         showToast(error.message, "error");
     }

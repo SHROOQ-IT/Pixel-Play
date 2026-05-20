@@ -2407,3 +2407,271 @@ select:focus {
         grid-template-columns: 1fr;
     }
 }
+.pro-profile-actions .secondary-btn {
+    color: #00ff66 !important;
+    background: rgba(0,255,0,0.08) !important;
+    border: 2px solid #00ff66 !important;
+}
+
+.pro-profile-actions .secondary-btn:hover {
+    color: #000 !important;
+    background: #00ff66 !important;
+}
+.forgot-password-btn {
+    background: transparent;
+    border: none;
+    color: #00ff66;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.forgot-password-btn:hover {
+    color: #ff00ff;
+}
+.account-side-panel {
+    align-items: center !important;
+}
+
+.profile-edit-box,
+.pro-profile-actions {
+    max-width: 720px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.pro-profile-actions {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem !important;
+    padding: 1.5rem !important;
+}
+
+.pro-profile-actions .cta-button {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+.profile-edit-box h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-edit-box > p {
+    max-width: 520px;
+    color: #cfcfcf !important;
+    line-height: 1.6;
+}
+
+.profile-photo-hint {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .pro-profile-actions {
+        grid-template-columns: 1fr;
+    }
+}
+.account-side-panel {
+    align-items: center !important;
+}
+
+.account-settings-card {
+    position: relative;
+}
+
+.settings-label {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 0.8rem;
+}
+
+.profile-edit-box,
+.pro-profile-actions {
+    max-width: 760px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+}
+
+.profile-edit-box h2 {
+    font-size: 1.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-edit-box > p {
+    max-width: 560px;
+    color: #d6d6d6 !important;
+    line-height: 1.6;
+    margin-bottom: 1.4rem;
+}
+
+.profile-edit-box .form-group label {
+    color: #fff;
+    font-weight: 700;
+}
+
+.profile-edit-box input {
+    height: 48px;
+    border-radius: 10px;
+}
+
+.pro-profile-actions {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem !important;
+    padding: 1.5rem !important;
+}
+
+.pro-profile-actions .cta-button {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+.pro-profile-actions .secondary-btn {
+    color: #00ff66 !important;
+    background: rgba(0,255,0,0.08) !important;
+    border: 2px solid #00ff66 !important;
+}
+
+.pro-profile-actions .secondary-btn:hover {
+    color: #000 !important;
+    background: #00ff66 !important;
+}
+
+@media (max-width: 768px) {
+    .pro-profile-actions {
+        grid-template-columns: 1fr !important;
+    }
+}
+/* GLOBAL UI POLISH */
+
+:root {
+    --card-radius: 18px;
+    --main-transition: 0.25s ease;
+}
+
+/* Smooth transitions */
+
+button,
+a,
+input,
+select,
+textarea,
+.game-card,
+.profile-stat-box,
+.review-card,
+.feature-card,
+.about-card,
+.profile-edit-box,
+.pro-profile-actions,
+.home-game-card {
+    transition: all var(--main-transition);
+}
+
+/* Better cards */
+
+.game-card,
+.profile-stat-box,
+.review-card,
+.feature-card,
+.about-card,
+.profile-edit-box,
+.pro-profile-actions,
+.home-game-card,
+.account-hero-card,
+.account-reviews-card {
+    border-radius: var(--card-radius);
+    backdrop-filter: blur(12px);
+}
+
+/* Cleaner hover */
+
+.game-card:hover,
+.home-game-card:hover,
+.feature-card:hover,
+.about-card:hover,
+.review-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(0,255,100,0.12);
+}
+
+/* Inputs */
+
+input,
+select,
+textarea {
+    transition: 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    transform: scale(1.01);
+    box-shadow: 0 0 18px rgba(0,255,100,0.18);
+}
+
+/* Buttons */
+
+.cta-button {
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Secondary buttons */
+
+.secondary-btn {
+    background: rgba(255,255,255,0.03) !important;
+}
+
+/* Section spacing */
+
+.home-section,
+.profile-section,
+.about-hero,
+.about-grid,
+.account-dashboard {
+    margin-top: 3rem;
+}
+
+/* Better paragraphs */
+
+p {
+    line-height: 1.7;
+}
+
+/* Cleaner headings */
+
+h1,
+h2,
+h3 {
+    letter-spacing: -0.5px;
+}
+
+/* Navbar polish */
+
+.nav-links a {
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #00ff66;
+    transition: 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}

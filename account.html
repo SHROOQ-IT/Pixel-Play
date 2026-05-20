@@ -3,149 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Account | PixelPlay</title>
+    <title>Account | PixelPlay</title>
     <link rel="icon" type="image/png" href="assests/images/games/android-chrome-512x512.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav id="main-nav">
-        <div class="nav-container">
-            <div id="logo">
-                <span style="color:#00ff00;">Pixel</span><span style="color:#ff00ff;">Play</span>
-            </div>
-
-            <div class="menu-toggle" id="menu-toggle">☰</div>
-
-            <ul class="nav-links">
-                <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
-                <li><a href="games.html" data-en="Games" data-ar="الألعاب">Games</a></li>
-                <li><a href="tips.html" data-en="Tips" data-ar="النصائح">Tips</a></li>
-                <li><a href="members.html" data-en="Hub" data-ar="المجتمع">Hub</a></li>
-<a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>                <li><a href="account.html" id="auth-link" class="active" data-en="Account" data-ar="حسابي">Account</a></li>
-                <li><button id="lang-toggle" class="lang-btn">AR</button></li>
-            </ul>
+<nav id="main-nav">
+    <div class="nav-container">
+        <div id="logo">
+            <span style="color:#00ff00;">Pixel</span><span style="color:#ff00ff;">Play</span>
         </div>
-    </nav>
 
-    <main class="container account-page">
-        <section class="account-hero-card">
-            <div class="account-cover"></div>
+        <div class="menu-toggle" id="menu-toggle">☰</div>
 
-            <div class="account-header-content">
-                <div class="profile-photo-wrapper" title="Change profile picture">
-                    <img id="profile-photo" src="" alt="Profile Photo">
-                    <div class="profile-avatar" id="default-avatar">🎮</div>
-                    <div class="photo-overlay" data-en="Change" data-ar="تغيير">Change</div>
-                </div>
+        <ul class="nav-links">
+            <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+            <li><a href="games.html" data-en="Games" data-ar="الألعاب">Games</a></li>
+            <li><a href="tips.html" data-en="Tips" data-ar="النصائح">Tips</a></li>
+            <li><a href="members.html" data-en="Hub" data-ar="المجتمع">Hub</a></li>
+            <li><a href="about.html" data-en="About" data-ar="عن الموقع">About</a></li>
+            <li><a href="contact.html" data-en="Support" data-ar="الدعم">Support</a></li>
+            <li><a href="account.html" id="auth-link" class="active" data-en="Account" data-ar="حسابي">Account</a></li>
+            <li><button id="lang-toggle" class="lang-btn">AR</button></li>
+        </ul>
+    </div>
+</nav>
 
-                <input type="file" id="profile-image-input" accept="image/*" hidden>
+<main class="container account-page">
 
-                <div class="account-main-info">
-                    <h1 id="welcome-user">Loading...</h1>
-                    <p id="user-email"></p>
+    <section class="account-hero-card">
+        <div class="account-cover"></div>
 
-                    <p id="member-info"
-                       data-en="PixelPlay Gamer • Member since 2026"
-                       data-ar="لاعب PixelPlay • عضو منذ 2026">
-                        PixelPlay Gamer • Member since 2026
-                    </p>
-
-                    <p id="profile-badge"
-                       data-en="Badge: PixelPlay Gamer"
-                       data-ar="الشارة: لاعب PixelPlay">
-                        Badge: PixelPlay Gamer
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="account-dashboard">
-            <div class="account-left">
-                <div class="profile-stats">
-                    <div class="profile-stat-box">
-                        <span id="wishlist-count">0</span>
-                        <p data-en="Saved Games" data-ar="الألعاب المحفوظة">Saved Games</p>
-                    </div>
-
-                    <div class="profile-stat-box">
-                        <span id="reviews-count">0</span>
-                        <p data-en="Reviews" data-ar="التقييمات">Reviews</p>
-                    </div>
-
-                    <div class="profile-stat-box">
-                        <span id="average-rating">0.0</span>
-                        <p data-en="Avg Rating" data-ar="متوسط التقييم">Avg Rating</p>
-                    </div>
-                </div>
-
-                <section class="profile-section account-reviews-card">
-                    <h2 data-en="My Reviews" data-ar="تقييماتي">My Reviews</h2>
-
-                    <div id="my-reviews-list">
-                        <p style="color:#ccc;" data-en="Loading reviews..." data-ar="جاري تحميل التقييمات...">
-                            Loading reviews...
-                        </p>
-                    </div>
-                </section>
+        <div class="account-header-content">
+            <div class="profile-photo-wrapper" title="Change profile picture">
+                <img id="profile-photo" src="" alt="Profile Photo">
+                <div class="profile-avatar" id="default-avatar">🎮</div>
+                <div class="photo-overlay" data-en="Change Photo" data-ar="تغيير الصورة">Change Photo</div>
             </div>
 
-            <aside class="account-side-panel">
-                <div class="profile-edit-box">
-                    <h2 data-en="Edit Profile" data-ar="تعديل الملف الشخصي">Edit Profile</h2>
-                    <p data-en="Update your public display name and profile picture."
-                       data-ar="حدّث اسم العرض وصورة ملفك الشخصي.">
-                        Update your public display name and profile picture.
-                    </p>
+            <input type="file" id="profile-image-input" accept="image/*" hidden>
 
-                    <div class="form-group">
-                        <label for="display-name-input" data-en="Display Name" data-ar="اسم العرض">Display Name</label>
-                        <input type="text" id="display-name-input"
-                               placeholder="Enter new display name"
-                               data-en-placeholder="Enter new display name"
-                               data-ar-placeholder="اكتب اسم العرض الجديد">
-                    </div>
+            <div class="account-main-info">
+                <h1 id="welcome-user">Loading...</h1>
+                <p id="user-email"></p>
 
-                    <button class="cta-button" id="save-profile-btn"
-                            data-en="Save Changes"
-                            data-ar="حفظ التغييرات">
-                        Save Changes
-                    </button>
+                <p id="member-info"
+                   data-en="PixelPlay Member"
+                   data-ar="عضو في PixelPlay">
+                    PixelPlay Member
+                </p>
 
-                    <p class="profile-photo-hint"
-                       data-en="Tip: Click your profile picture to change it."
-                       data-ar="ملاحظة: اضغط على صورة الملف لتغييرها.">
-                        Tip: Click your profile picture to change it.
-                    </p>
+                <p id="profile-badge"
+                   data-en="Player Level: PixelPlay Gamer"
+                   data-ar="مستوى اللاعب: PixelPlay Gamer">
+                    Player Level: PixelPlay Gamer
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="account-dashboard">
+
+        <div class="account-left">
+            <div class="profile-stats">
+                <div class="profile-stat-box">
+                    <span id="wishlist-count">0</span>
+                    <p data-en="Saved Games" data-ar="الألعاب المحفوظة">Saved Games</p>
                 </div>
 
-                <div class="profile-actions pro-profile-actions">
-                    <button class="cta-button" onclick="location.href='wishlist.html'" data-en="My Wishlist" data-ar="قائمتي">
-                        My Wishlist
-                    </button>
-
-                    <button class="cta-button secondary-btn" onclick="location.href='games.html'" data-en="Browse Games" data-ar="تصفح الألعاب">
-                        Browse Games
-                    </button>
-
-                    <button class="cta-button logout-btn" id="logout-btn" data-en="Logout" data-ar="تسجيل الخروج">
-                        Logout
-                    </button>
+                <div class="profile-stat-box">
+                    <span id="reviews-count">0</span>
+                    <p data-en="Reviews" data-ar="التقييمات">Reviews</p>
                 </div>
-            </aside>
-        </section>
-    </main>
 
-    <footer class="site-footer">
-        <p>© 2026 PixelPlay. All rights reserved.</p>
-        <span data-en="Built with passion for gaming 🎮" data-ar="صُنع بشغف لعالم الألعاب 🎮">
-            Built with passion for gaming 🎮
-        </span>
-    </footer>
+                <div class="profile-stat-box">
+                    <span id="average-rating">0.0</span>
+                    <p data-en="Average Rating" data-ar="متوسط التقييم">Average Rating</p>
+                </div>
+            </div>
 
-    <script type="module" src="navbar-auth.js"></script>
-    <script type="module" src="account.js"></script>
-    <script src="script.js"></script>
-    <script src="language.js"></script>
+            <section class="profile-section account-reviews-card">
+                <h2 data-en="Review Activity" data-ar="نشاط التقييمات">Review Activity</h2>
+
+                <div id="my-reviews-list">
+                    <p style="color:#ccc;" data-en="Loading reviews..." data-ar="جاري تحميل التقييمات...">
+                        Loading reviews...
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <aside class="account-side-panel">
+            <div class="profile-edit-box account-settings-card">
+                <span class="settings-label" data-en="ACCOUNT SETTINGS" data-ar="إعدادات الحساب">
+                    ACCOUNT SETTINGS
+                </span>
+
+                <h2 data-en="Profile Details" data-ar="تفاصيل الملف الشخصي">
+                    Profile Details
+                </h2>
+
+                <p data-en="Manage your public identity across PixelPlay."
+                   data-ar="تحكمي بهويتك الظاهرة داخل PixelPlay.">
+                    Manage your public identity across PixelPlay.
+                </p>
+
+                <div class="form-group">
+                    <label for="display-name-input" data-en="Display Name" data-ar="اسم العرض">Display Name</label>
+                    <input type="text" id="display-name-input"
+                           placeholder="Enter display name"
+                           data-en-placeholder="Enter display name"
+                           data-ar-placeholder="اكتب اسم العرض">
+                </div>
+
+                <button class="cta-button" id="save-profile-btn"
+                        data-en="Save Changes"
+                        data-ar="حفظ التغييرات">
+                    Save Changes
+                </button>
+            </div>
+
+            <div class="profile-actions pro-profile-actions">
+                <button class="cta-button" onclick="location.href='wishlist.html'" data-en="My Wishlist" data-ar="قائمتي">
+                    My Wishlist
+                </button>
+
+                <button class="cta-button secondary-btn" onclick="location.href='games.html'" data-en="Browse Games" data-ar="تصفح الألعاب">
+                    Browse Games
+                </button>
+
+                <button class="cta-button logout-btn" id="logout-btn" data-en="Logout" data-ar="تسجيل الخروج">
+                    Logout
+                </button>
+            </div>
+        </aside>
+
+    </section>
+</main>
+
+<footer class="site-footer">
+    <p>© 2026 PixelPlay. All rights reserved.</p>
+    <span data-en="Built with passion for gaming 🎮" data-ar="صُنع بشغف لعالم الألعاب 🎮">
+        Built with passion for gaming 🎮
+    </span>
+</footer>
+
+<script type="module" src="navbar-auth.js"></script>
+<script type="module" src="account.js"></script>
+<script src="script.js"></script>
+<script src="language.js"></script>
 </body>
 </html>

@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In | PixelPlay</title>
     <link rel="icon" type="image/png" href="assests/images/games/android-chrome-512x512.png">
-    <link rel="icon" type="image/png" href="assests/images/games/android-chrome-512x512.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,7 +24,8 @@
             <li><a href="members.html" data-en="Hub" data-ar="المجتمع">Hub</a></li>
             <li><a href="about.html" data-en="About" data-ar="عن الموقع">About</a></li>
             <li><a href="contact.html" data-en="Support" data-ar="الدعم">Support</a></li>
-<li><a href="login.html" id="auth-link" data-en="Sign In" data-ar="تسجيل الدخول">Sign In</a></li>            <li><button id="lang-toggle" class="lang-btn">AR</button></li>
+            <li><a href="login.html" id="auth-link" class="active" data-en="Sign In" data-ar="تسجيل الدخول">Sign In</a></li>
+            <li><button id="lang-toggle" class="lang-btn">AR</button></li>
         </ul>
     </div>
 </nav>
@@ -33,22 +33,34 @@
 <main class="container auth-page">
     <section class="auth-pro-card" id="auth-card">
         <div class="auth-side">
-            <span class="hero-badge" data-en="PixelPlay Access" data-ar="دخول PixelPlay">PixelPlay Access</span>
-           <h1 data-en="Ready to Play?" data-ar="جاهز تبدأ اللعب؟">
-    Ready to Play?
-</h1>
+            <span class="hero-badge" data-en="PixelPlay Access" data-ar="دخول PixelPlay">
+                PixelPlay Access
+            </span>
 
-<p data-en="Create an account or sign in to save games, write reviews, share tips, and build your player library."
-   data-ar="أنشئ حسابًا أو سجّل دخولك لحفظ الألعاب، كتابة التقييمات، مشاركة النصائح، وبناء مكتبتك.">
-    Create an account or sign in to save games, write reviews, share tips, and build your player library.
-</p>
+            <h1 data-en="Ready to Play?" data-ar="جاهز تبدأ اللعب؟">
+                Ready to Play?
+            </h1>
 
+            <p data-en="Create an account or sign in to save games, write reviews, share tips, and build your player library."
+               data-ar="أنشئ حسابًا أو سجّل دخولك لحفظ الألعاب، كتابة التقييمات، مشاركة النصائح، وبناء مكتبتك.">
+                Create an account or sign in to save games, write reviews, share tips, and build your player library.
+            </p>
+
+            <div class="auth-feature-list">
+                <div data-en="Save your favorite games" data-ar="احفظ ألعابك المفضلة">Save your favorite games</div>
+                <div data-en="Write and read reviews" data-ar="اكتب واقرأ التقييمات">Write and read reviews</div>
+                <div data-en="Share tips with players" data-ar="شارك النصائح مع اللاعبين">Share tips with players</div>
+            </div>
         </div>
 
         <div class="auth-form-panel">
             <div class="auth-tabs">
-                <button class="auth-tab active" id="show-login" data-en="Sign In" data-ar="تسجيل الدخول">Sign In</button>
-                <button class="auth-tab" id="show-register" data-en="Create Account" data-ar="إنشاء حساب">Create Account</button>
+                <button class="auth-tab active" id="show-login" data-en="Sign In" data-ar="تسجيل الدخول">
+                    Sign In
+                </button>
+                <button class="auth-tab" id="show-register" data-en="Create Account" data-ar="إنشاء حساب">
+                    Create Account
+                </button>
             </div>
 
             <div id="login-form-box">
@@ -56,20 +68,30 @@
 
                 <div class="form-group">
                     <label for="email" data-en="Email" data-ar="البريد الإلكتروني">Email</label>
-                    <input type="email" id="email" placeholder="Enter your email"
+                    <input type="email" id="email"
+                           placeholder="Enter your email"
                            data-en-placeholder="Enter your email"
                            data-ar-placeholder="اكتب بريدك الإلكتروني">
                 </div>
 
                 <div class="form-group">
                     <label for="password" data-en="Password" data-ar="كلمة المرور">Password</label>
-                    <input type="password" id="password" placeholder="Enter your password"
+                    <input type="password" id="password"
+                           placeholder="Enter your password"
                            data-en-placeholder="Enter your password"
                            data-ar-placeholder="اكتب كلمة المرور">
                 </div>
 
-                <button class="cta-button auth-main-btn" id="login-btn" data-en="Sign In" data-ar="تسجيل الدخول">
+                <button class="cta-button auth-main-btn" id="login-btn"
+                        data-en="Sign In"
+                        data-ar="تسجيل الدخول">
                     Sign In
+                </button>
+
+                <button type="button" class="forgot-password-btn" id="forgot-password-btn"
+                        data-en="Forgot password?"
+                        data-ar="نسيت كلمة المرور؟">
+                    Forgot password?
                 </button>
             </div>
 
@@ -78,41 +100,34 @@
 
                 <div class="form-group">
                     <label for="username" data-en="Display Name" data-ar="اسم العرض">Display Name</label>
-                    <input type="text" id="username" placeholder="Enter your player name"
+                    <input type="text" id="username"
+                           placeholder="Enter your player name"
                            data-en-placeholder="Enter your player name"
                            data-ar-placeholder="اكتب اسم اللاعب">
                 </div>
 
                 <div class="form-group">
                     <label for="register-email" data-en="Email" data-ar="البريد الإلكتروني">Email</label>
-                    <input type="email" id="register-email" placeholder="Enter your email"
+                    <input type="email" id="register-email"
+                           placeholder="Enter your email"
                            data-en-placeholder="Enter your email"
                            data-ar-placeholder="اكتب بريدك الإلكتروني">
                 </div>
 
                 <div class="form-group">
                     <label for="register-password" data-en="Password" data-ar="كلمة المرور">Password</label>
-                    <input type="password" id="register-password" placeholder="Create a strong password"
+                    <input type="password" id="register-password"
+                           placeholder="Create a strong password"
                            data-en-placeholder="Create a strong password"
                            data-ar-placeholder="أنشئ كلمة مرور قوية">
                 </div>
 
-                <p class="password-note"
-                   data-en="Use at least 8 characters with uppercase, lowercase, number, and symbol."
-                   data-ar="استخدم 8 أحرف على الأقل مع حرف كبير، حرف صغير، رقم، ورمز.">
-                    Use at least 8 characters with uppercase, lowercase, number, and symbol.
-                </p>
-
-                <button class="cta-button auth-main-btn" id="register-btn" data-en="Create Account" data-ar="إنشاء حساب">
+                <button class="cta-button auth-main-btn" id="register-btn"
+                        data-en="Create Account"
+                        data-ar="إنشاء حساب">
                     Create Account
                 </button>
             </div>
-
-            <p class="verify-note"
-               data-en="New accounts may receive a verification email. Check your inbox or spam folder."
-               data-ar="قد يصلك رابط تحقق بعد إنشاء الحساب. تحقق من البريد الوارد أو الرسائل غير المرغوبة.">
-                New accounts may receive a verification email. Check your inbox or spam folder.
-            </p>
 
             <p id="auth-message"></p>
         </div>
@@ -120,13 +135,28 @@
 
     <section class="auth-pro-card logged-card" id="logged-card" style="display:none;">
         <div class="login-icon">👤</div>
+
         <h2 id="logged-title">Already Logged In</h2>
         <p id="logged-email"></p>
 
         <div class="login-actions">
-            <button class="cta-button" onclick="location.href='account.html'" data-en="Go to Account" data-ar="الذهاب إلى الحساب">Go to Account</button>
-            <button class="cta-button secondary-btn" onclick="location.href='games.html'" data-en="Browse Games" data-ar="تصفح الألعاب">Browse Games</button>
-            <button class="cta-button logout-btn" id="logout-btn" data-en="Logout" data-ar="تسجيل الخروج">Logout</button>
+            <button class="cta-button" onclick="location.href='account.html'"
+                    data-en="Go to Account"
+                    data-ar="الذهاب إلى الحساب">
+                Go to Account
+            </button>
+
+            <button class="cta-button secondary-btn" onclick="location.href='games.html'"
+                    data-en="Browse Games"
+                    data-ar="تصفح الألعاب">
+                Browse Games
+            </button>
+
+            <button class="cta-button logout-btn" id="logout-btn"
+                    data-en="Logout"
+                    data-ar="تسجيل الخروج">
+                Logout
+            </button>
         </div>
     </section>
 </main>

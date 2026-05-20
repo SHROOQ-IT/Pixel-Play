@@ -31,6 +31,15 @@ const profilePhotoWrapper = document.querySelector(".profile-photo-wrapper");
 
 let currentUser = null;
 
+function updateWelcomeName(name) {
+    const currentLang = localStorage.getItem("pixelplay-lang") || "en";
+
+    welcomeUser.textContent =
+        currentLang === "ar"
+            ? `👋 مرحبًا، ${name}`
+            : `👋 Welcome, ${name}`;
+}
+
 function hideEmail(email) {
     const emailParts = email.split("@");
     const namePart = emailParts[0];
@@ -116,12 +125,8 @@ onAuthStateChanged(auth, async (user) => {
 
     const userName = user.displayName || "Player";
 
-const currentLang = localStorage.getItem("pixelplay-lang") || "en";
-
-welcomeUser.textContent =
-    currentLang === "ar"
-        ? `👋 مرحبًا، ${userName}`
-        : `👋 Welcome, ${userName}`;    userEmail.textContent = hideEmail(user.email);
+    updateWelcomeName(userName);
+    userEmail.textContent = hideEmail(user.email);
     displayNameInput.value = userName;
 
     loadProfileImage(user.uid);
@@ -196,12 +201,8 @@ saveProfileBtn.addEventListener("click", async () => {
             displayName: newDisplayName
         });
 
-const currentLang = localStorage.getItem("pixelplay-lang") || "en";
+        updateWelcomeName(newDisplayName);
 
-welcomeUser.textContent =
-    currentLang === "ar"
-        ? `👋 مرحبًا، ${userName}`
-        : `👋 Welcome, ${userName}`;
         showToast("Profile updated successfully! 👤");
 
     } catch (error) {
