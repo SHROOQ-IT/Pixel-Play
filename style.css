@@ -5051,3 +5051,143 @@ body * {
     box-sizing: border-box !important;
     vertical-align: middle !important;
 }
+/* GLOBAL MOBILE FIX */
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .container,
+    .premium-home,
+    .about-page-premium,
+    .hub-page-premium,
+    .tips-page-premium,
+    .login-page-premium,
+    .games-page-premium,
+    .support-page-premium {
+        width: 92% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .premium-home-hero,
+    .about-cinematic-hero,
+    .hub-cinematic-hero,
+    .tips-cinematic-hero,
+    .login-cinematic-layout,
+    .games-cinematic-hero,
+    .support-hero {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 1.4rem !important;
+        margin: 2rem auto 3rem !important;
+        width: 100% !important;
+    }
+
+    .premium-hero-content,
+    .about-cinematic-content,
+    .hub-hero-content,
+    .tips-hero-content,
+    .login-hero-panel,
+    .games-hero-content,
+    .support-hero-content,
+    .premium-featured-card,
+    .about-cinematic-card,
+    .hub-status-panel,
+    .tips-feature-panel,
+    .games-feature-panel,
+    .support-status-card,
+    .login-form-card {
+        padding: 1.4rem !important;
+        border-radius: 24px !important;
+        background:
+            linear-gradient(135deg, rgba(0,255,100,0.08), rgba(255,0,255,0.08)),
+            rgba(255,255,255,0.04) !important;
+        border: 1px solid rgba(0,255,100,0.22) !important;
+    }
+
+    h1,
+    .premium-hero-content h1,
+    .about-cinematic-content h1,
+    .hub-hero-content h1,
+    .tips-hero-content h1,
+    .login-hero-panel h1,
+    .games-hero-content h1,
+    .support-hero-content h1 {
+        font-size: 2.1rem !important;
+        line-height: 1.18 !important;
+        max-width: 100% !important;
+    }
+
+    h2 {
+        font-size: 1.55rem !important;
+    }
+
+    p {
+        font-size: 0.98rem !important;
+        line-height: 1.75 !important;
+    }
+
+    .hero-badge,
+    .section-kicker,
+    .account-label {
+        font-size: 0.72rem !important;
+        letter-spacing: 1.4px !important;
+    }
+
+    .hero-buttons,
+    .premium-community form,
+    .tips-search-premium,
+    .ai-matcher-box {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 0.8rem !important;
+        width: 100% !important;
+    }
+
+    .cta-button,
+    .secondary-btn,
+    input,
+    select,
+    textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+        font-size: 0.95rem !important;
+    }
+
+    .featured-image-wrap img,
+    .about-cinematic-card img,
+    .premium-game-card img {
+        height: 220px !important;
+        object-fit: cover !important;
+    }
+
+    .premium-game-row,
+    .premium-stats,
+    .premium-game-grid,
+    .features-grid,
+    .about-platform-grid,
+    .hub-highlights-grid,
+    .tips-premium-grid,
+    .support-options-grid,
+    .games-filter-grid,
+    .premium-coming-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .premium-panel,
+    .about-vision-section,
+    .developer-showcase-card,
+    .hub-compose-card,
+    .hub-side-card,
+    .hub-feed-premium,
+    .submit-tip-premium,
+    .community-tips-premium,
+    .support-form-card,
+    .support-info-panel,
+    .premium-upcoming-section {
+        padding: 1.4rem !important;
+        border-radius: 24px !important;
+    }
+}
