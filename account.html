@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account | PixelPlay</title>
     <link rel="icon" type="image/png" href="assests/images/games/android-chrome-512x512.png">
-     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -31,116 +31,115 @@
     </div>
 </nav>
 
-<main class="container account-page">
+<main class="account-clean-page">
 
-    <section class="account-hero-card">
-        <div class="account-cover"></div>
+    <section class="account-clean-header">
+        <div class="profile-photo-wrapper account-clean-avatar" title="Change profile picture">
+            <img id="profile-photo" src="" alt="Profile Photo">
+            <div class="profile-avatar" id="default-avatar">🎮</div>
+            <div class="photo-overlay" data-en="Change" data-ar="تغيير">Change</div>
+        </div>
 
-        <div class="account-header-content">
-            <div class="profile-photo-wrapper" title="Change profile picture">
-                <img id="profile-photo" src="" alt="Profile Photo">
-                <div class="profile-avatar" id="default-avatar">🎮</div>
-                <div class="photo-overlay" data-en="Change Photo" data-ar="تغيير الصورة">Change Photo</div>
-            </div>
+        <input type="file" id="profile-image-input" accept="image/*" hidden>
 
-            <input type="file" id="profile-image-input" accept="image/*" hidden>
+        <div class="account-clean-info">
+            <span class="account-label" data-en="PLAYER PROFILE" data-ar="ملف اللاعب">
+                PLAYER PROFILE
+            </span>
 
-            <div class="account-main-info">
-                <h1 id="welcome-user">Loading...</h1>
-                <p id="user-email"></p>
+            <h1 id="welcome-user">Loading...</h1>
+            <p id="user-email"></p>
 
-                <p id="member-info"
-                   data-en="PixelPlay Member"
-                   data-ar="عضو في PixelPlay">
+            <div class="account-clean-badges">
+                <span id="member-info" data-en="PixelPlay Member" data-ar="عضو في PixelPlay">
                     PixelPlay Member
-                </p>
+                </span>
 
-                <p id="profile-badge"
-                   data-en="Player Level: PixelPlay Gamer"
-                   data-ar="مستوى اللاعب: PixelPlay Gamer">
-                    Player Level: PixelPlay Gamer
-                </p>
+                <span id="profile-badge" data-en="PixelPlay Gamer" data-ar="PixelPlay Gamer">
+                    PixelPlay Gamer
+                </span>
             </div>
         </div>
     </section>
 
-    <section class="account-dashboard">
-
-        <div class="account-left">
-            <div class="profile-stats">
-                <div class="profile-stat-box">
-                    <span id="wishlist-count">0</span>
-                    <p data-en="Saved Games" data-ar="الألعاب المحفوظة">Saved Games</p>
-                </div>
-
-                <div class="profile-stat-box">
-                    <span id="reviews-count">0</span>
-                    <p data-en="Reviews" data-ar="التقييمات">Reviews</p>
-                </div>
-
-                <div class="profile-stat-box">
-                    <span id="average-rating">0.0</span>
-                    <p data-en="Average Rating" data-ar="متوسط التقييم">Average Rating</p>
-                </div>
-            </div>
-
-            <section class="profile-section account-reviews-card">
-                <h2 data-en="Review Activity" data-ar="نشاط التقييمات">Review Activity</h2>
-
-                <div id="my-reviews-list">
-                    <p style="color:#ccc;" data-en="Loading reviews..." data-ar="جاري تحميل التقييمات...">
-                        Loading reviews...
-                    </p>
-                </div>
-            </section>
+    <section class="account-clean-stats">
+        <div>
+            <strong id="wishlist-count">0</strong>
+            <span data-en="Saved Games" data-ar="الألعاب المحفوظة">Saved Games</span>
         </div>
 
-        <aside class="account-side-panel">
-            <div class="profile-edit-box account-settings-card">
-                <span class="settings-label" data-en="ACCOUNT SETTINGS" data-ar="إعدادات الحساب">
-                    ACCOUNT SETTINGS
-                </span>
+        <div>
+            <strong id="reviews-count">0</strong>
+            <span data-en="Reviews" data-ar="التقييمات">Reviews</span>
+        </div>
 
-                <h2 data-en="Profile Details" data-ar="تفاصيل الملف الشخصي">
-                    Profile Details
-                </h2>
+        <div>
+            <strong id="average-rating">0.0</strong>
+            <span data-en="Avg Rating" data-ar="متوسط التقييم">Avg Rating</span>
+        </div>
+    </section>
 
-                <p data-en="Manage your public identity across PixelPlay."
-                   data-ar="تحكمي بهويتك الظاهرة داخل PixelPlay.">
-                    Manage your public identity across PixelPlay.
-                </p>
+    <section class="account-clean-content">
 
-                <div class="form-group">
-                    <label for="display-name-input" data-en="Display Name" data-ar="اسم العرض">Display Name</label>
-                    <input type="text" id="display-name-input"
-                           placeholder="Enter display name"
-                           data-en-placeholder="Enter display name"
-                           data-ar-placeholder="اكتب اسم العرض">
-                </div>
-
-                <button class="cta-button" id="save-profile-btn"
-                        data-en="Save Changes"
-                        data-ar="حفظ التغييرات">
-                    Save Changes
-                </button>
+        <div class="account-clean-main">
+            <div class="account-section-title">
+                <span data-en="ACTIVITY" data-ar="النشاط">ACTIVITY</span>
+                <h2 data-en="Reviews" data-ar="التقييمات">Reviews</h2>
             </div>
 
-            <div class="profile-actions pro-profile-actions">
-                <button class="cta-button" onclick="location.href='wishlist.html'" data-en="My Wishlist" data-ar="قائمتي">
+            <div id="my-reviews-list">
+                <p style="color:#aaa;" data-en="Loading reviews..." data-ar="جاري تحميل التقييمات...">
+                    Loading reviews...
+                </p>
+            </div>
+        </div>
+
+        <aside class="account-clean-side">
+            <div class="account-section-title">
+                <span data-en="SETTINGS" data-ar="الإعدادات">SETTINGS</span>
+                <h2 data-en="Profile" data-ar="الملف">Profile</h2>
+            </div>
+
+            <div class="form-group">
+                <label for="display-name-input" data-en="Display Name" data-ar="اسم العرض">
+                    Display Name
+                </label>
+
+                <input type="text" id="display-name-input"
+                       placeholder="Enter display name"
+                       data-en-placeholder="Enter display name"
+                       data-ar-placeholder="اكتب اسم العرض">
+            </div>
+
+            <button class="cta-button" id="save-profile-btn"
+                    data-en="Save"
+                    data-ar="حفظ">
+                Save
+            </button>
+
+            <div class="account-clean-actions">
+                <button class="plain-link-btn" onclick="location.href='wishlist.html'"
+                        data-en="My Wishlist"
+                        data-ar="قائمتي">
                     My Wishlist
                 </button>
 
-                <button class="cta-button secondary-btn" onclick="location.href='games.html'" data-en="Browse Games" data-ar="تصفح الألعاب">
-                    Browse Games
+                <button class="plain-link-btn" onclick="location.href='games.html'"
+                        data-en="Explore Games"
+                        data-ar="استكشف الألعاب">
+                    Explore Games
                 </button>
 
-                <button class="cta-button logout-btn" id="logout-btn" data-en="Logout" data-ar="تسجيل الخروج">
+                <button class="plain-link-btn danger" id="logout-btn"
+                        data-en="Logout"
+                        data-ar="تسجيل الخروج">
                     Logout
                 </button>
             </div>
         </aside>
 
     </section>
+
 </main>
 
 <footer class="site-footer">

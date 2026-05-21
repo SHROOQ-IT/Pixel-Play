@@ -3,41 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PixelPlay | Game Catalog</title>
+    <title>Games | PixelPlay</title>
     <link rel="icon" type="image/png" href="assests/images/games/android-chrome-512x512.png">
-     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   
-    <nav id="main-nav">
-        <div class="nav-container">
-            <div id="logo">
-                <span style="color:#00ff00;">Pixel</span><span style="color:#ff00ff;">Play</span>
-            </div>
 
-            <div class="menu-toggle" id="menu-toggle">☰</div>
-
-            <ul class="nav-links">
-                <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
-                <li><a href="games.html" class="active" data-en="Games" data-ar="الألعاب">Games</a></li>
-                <li><a href="tips.html" data-en="Tips" data-ar="النصائح">Tips</a></li>
-                <li><a href="members.html" data-en="Hub" data-ar="المجتمع">Hub</a></li>
-                            <li><a href="about.html" data-en="About" data-ar="عن الموقع">About</a></li>
-
-<a href="contact.html" data-en="Support" data-ar="الدعم">Support</a>                <li><a href="login.html" id="auth-link" data-en="Login" data-ar="تسجيل الدخول">Login</a></li>
-                <li><button id="lang-toggle" class="lang-btn">AR</button></li>
-            </ul>
+<nav id="main-nav">
+    <div class="nav-container">
+        <div id="logo">
+            <span style="color:#00ff00;">Pixel</span><span style="color:#ff00ff;">Play</span>
         </div>
-    </nav>
 
-    <main class="container">
-        <h1 class="page-title" data-en="Game Catalog" data-ar="كتالوج الألعاب">Game Catalog</h1>
-        
-        <section class="game-search">
-            <input type="text" id="search-input" placeholder="Search games...">
+        <div class="menu-toggle" id="menu-toggle">☰</div>
 
-            <div class="filters">
+        <ul class="nav-links">
+            <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+            <li><a href="games.html" class="active" data-en="Games" data-ar="الألعاب">Games</a></li>
+            <li><a href="tips.html" data-en="Tips" data-ar="النصائح">Tips</a></li>
+            <li><a href="members.html" data-en="Hub" data-ar="المجتمع">Hub</a></li>
+            <li><a href="about.html" data-en="About" data-ar="عن الموقع">About</a></li>
+            <li><a href="contact.html" data-en="Support" data-ar="الدعم">Support</a></li>
+            <li><a href="login.html" id="auth-link" data-en="Sign In" data-ar="تسجيل الدخول">Sign In</a></li>
+            <li><button id="lang-toggle" class="lang-btn">AR</button></li>
+        </ul>
+    </div>
+</nav>
+
+<main class="container games-page-premium">
+
+    <section class="games-cinematic-hero">
+        <div class="games-glow"></div>
+
+        <div class="games-hero-content">
+            <span class="section-kicker" data-en="GAME LIBRARY" data-ar="مكتبة الألعاب">
+                GAME LIBRARY
+            </span>
+
+            <h1 data-en="Discover your next favorite game."
+                data-ar="اكتشف لعبتك القادمة.">
+                Discover your next favorite game.
+            </h1>
+
+            <p data-en="Browse real game data, filter by genre or platform, and save the titles you want to play next."
+               data-ar="تصفح بيانات ألعاب حقيقية، فلتر حسب التصنيف أو المنصة، واحفظ الألعاب التي تريد تجربتها.">
+                Browse real game data, filter by genre or platform, and save the titles you want to play next.
+            </p>
+        </div>
+
+        <div class="games-feature-panel">
+            <span data-en="POWERED BY RAWG" data-ar="مدعوم ببيانات RAWG">POWERED BY RAWG</span>
+            <h2 data-en="Real titles. Real discovery." data-ar="ألعاب حقيقية. اكتشاف حقيقي.">
+                Real titles. Real discovery.
+            </h2>
+            <p data-en="Popular, mobile, top-rated, and upcoming games in one place."
+               data-ar="ألعاب رائجة، جوال، الأعلى تقييمًا، وقادمة في مكان واحد.">
+                Popular, mobile, top-rated, and upcoming games in one place.
+            </p>
+        </div>
+    </section>
+
+    <section class="games-control-panel">
+        <div class="games-search-box">
+            <label data-en="Search Library" data-ar="ابحث في المكتبة">Search Library</label>
+            <input type="text" id="search-input"
+                   placeholder="Search games..."
+                   data-en-placeholder="Search games..."
+                   data-ar-placeholder="ابحث عن لعبة...">
+        </div>
+
+        <div class="filters games-filter-grid">
+            <div>
+                <label data-en="Genre" data-ar="التصنيف">Genre</label>
                 <select id="genre-filter">
                     <option value="all" data-en="All Genres" data-ar="كل التصنيفات">All Genres</option>
                     <option value="Battle Royale">Battle Royale</option>
@@ -49,7 +87,10 @@
                     <option value="Racing" data-en="Racing" data-ar="سباق">Racing</option>
                     <option value="Social Deduction">Social Deduction</option>
                 </select>
+            </div>
 
+            <div>
+                <label data-en="Platform" data-ar="المنصة">Platform</label>
                 <select id="platform-filter">
                     <option value="all" data-en="All Platforms" data-ar="كل المنصات">All Platforms</option>
                     <option value="PC">PC</option>
@@ -58,17 +99,29 @@
                     <option value="PS5">PS5</option>
                     <option value="Switch">Switch</option>
                 </select>
+            </div>
 
+            <div>
+                <label data-en="Sort" data-ar="الترتيب">Sort</label>
                 <select id="sort-filter">
-                    <option value="default" data-en="Sort By" data-ar="ترتيب حسب">Sort By</option>
+                    <option value="default" data-en="Featured" data-ar="المميز">Featured</option>
                     <option value="rating-high" data-en="Highest Rated" data-ar="الأعلى تقييمًا">Highest Rated</option>
                     <option value="newest" data-en="Newest" data-ar="الأحدث">Newest</option>
                     <option value="az">A - Z</option>
                 </select>
             </div>
-        </section>
-        
-        <section class="game-table-section">
+        </div>
+    </section>
+
+    <section class="games-library-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker" data-en="BROWSE" data-ar="تصفح">BROWSE</span>
+                <h2 data-en="Game Catalog" data-ar="كتالوج الألعاب">Game Catalog</h2>
+            </div>
+        </div>
+
+        <div class="game-table-section premium-table-wrap">
             <table id="game-table">
                 <thead>
                     <tr>
@@ -84,22 +137,36 @@
 
                 <tbody id="games-table-body"></tbody>
             </table>
-        </section>
-        
-        <section class="upcoming-games">
-            <h2 data-en="Coming Soon" data-ar="قريبًا">Coming Soon</h2>
-            <div class="game-cards" id="coming-soon-games"></div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <div id="game-modal" class="game-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
+    <section class="upcoming-games premium-upcoming-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker" data-en="NEXT DROPS" data-ar="الإصدارات القادمة">NEXT DROPS</span>
+                <h2 data-en="Coming Soon" data-ar="قريبًا">Coming Soon</h2>
+            </div>
+        </div>
 
-            <img id="modal-image" src="" alt="Game Image">
+        <div class="game-cards premium-coming-grid" id="coming-soon-games"></div>
+    </section>
+
+</main>
+
+<div id="game-modal" class="game-modal premium-game-modal">
+    <div class="modal-content premium-modal-content">
+        <span class="close-modal">&times;</span>
+
+        <img id="modal-image" src="" alt="Game Image">
+
+        <div class="premium-modal-body">
+            <span class="section-kicker" data-en="GAME DETAILS" data-ar="تفاصيل اللعبة">
+                GAME DETAILS
+            </span>
 
             <h2 id="modal-title"></h2>
             <p id="modal-description"></p>
+
             <div id="game-extra-info"></div>
 
             <div class="modal-info">
@@ -108,11 +175,9 @@
                 <span id="modal-rating"></span>
             </div>
 
-            <div style="padding: 0 1.5rem 1.5rem;">
-                <button class="wishlist-btn" id="modal-wishlist-btn" data-en="+ Add to Wishlist" data-ar="+ أضف إلى مكتبتي">
-                    + Add to Wishlist
-                </button>
-            </div>
+            <button class="wishlist-btn" id="modal-wishlist-btn" data-en="+ Add to Wishlist" data-ar="+ أضف إلى مكتبتي">
+                + Add to Wishlist
+            </button>
 
             <section class="reviews-section">
                 <h3 data-en="Player Reviews" data-ar="تقييمات اللاعبين">Player Reviews</h3>
@@ -139,19 +204,20 @@
             </section>
         </div>
     </div>
+</div>
 
-    <footer class="site-footer">
-        <p>© 2026 PixelPlay. All rights reserved.</p>
-        <span data-en="Built with passion for gaming 🎮" data-ar="صُنع بشغف لعالم الألعاب 🎮">
-            Built with passion for gaming 🎮
-        </span>
-    </footer>
+<footer class="site-footer">
+    <p>© 2026 PixelPlay. All rights reserved.</p>
+    <span data-en="Built with passion for gaming 🎮" data-ar="صُنع بشغف لعالم الألعاب 🎮">
+        Built with passion for gaming 🎮
+    </span>
+</footer>
 
-    <script type="module" src="navbar-auth.js"></script>
-    <script type="module" src="games-render.js"></script>
-    <script type="module" src="wishlist.js"></script>
-    <script type="module" src="reviews.js"></script>
-    <script src="script.js"></script>
-    <script src="language.js"></script>
+<script type="module" src="navbar-auth.js"></script>
+<script type="module" src="games-render.js"></script>
+<script type="module" src="wishlist.js"></script>
+<script type="module" src="reviews.js"></script>
+<script src="script.js"></script>
+<script src="language.js"></script>
 </body>
 </html>

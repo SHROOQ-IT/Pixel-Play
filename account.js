@@ -36,8 +36,8 @@ function updateWelcomeName(name) {
 
     welcomeUser.textContent =
         currentLang === "ar"
-            ? `👋 مرحبًا، ${name}`
-            : `👋 Welcome, ${name}`;
+            ? ` مرحبًا ${name}`
+            : ` Welcome ${name}`;
 }
 
 function hideEmail(email) {
