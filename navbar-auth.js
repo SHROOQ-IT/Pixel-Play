@@ -7,18 +7,52 @@ import {
 const authLink = document.getElementById("auth-link");
 
 onAuthStateChanged(auth, (user) => {
+
     if (!authLink) return;
 
     if (user) {
-        const userName = user.displayName || user.email.split("@")[0];
 
-        authLink.textContent = `👤 ${userName}`;
+        const savedImage =
+            localStorage.getItem(
+                `pixelplay-profile-image-${user.uid}`
+            );
+
+        if (savedImage) {
+
+            authLink.innerHTML = `
+                <img
+                    src="${savedImage}"
+                    alt="Profile"
+                    class="nav-profile-avatar"
+                >
+            `;
+
+        } else {
+
+            const firstLetter =
+                user.displayName
+                    ?.charAt(0)
+                    .toUpperCase() ||
+
+                user.email
+                    ?.charAt(0)
+                    .toUpperCase() ||
+
+                "P";
+
+            authLink.innerHTML = `
+                <div class="nav-profile-avatar default-avatar">
+                    ${firstLetter}
+                </div>
+            `;
+        }
+
         authLink.href = "account.html";
 
-        authLink.setAttribute("data-en", `👤 ${userName}`);
-        authLink.setAttribute("data-ar", `👤 ${userName}`);
     } else {
+
         authLink.textContent = "Sign In";
+
         authLink.href = "login.html";
 
         authLink.setAttribute("data-en", "Sign In");

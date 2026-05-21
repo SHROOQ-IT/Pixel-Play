@@ -2675,3 +2675,134 @@ h3 {
 .nav-links a.active::after {
     width: 100%;
 }
+#main-nav {
+    width: 100%;
+    background: #2f2f2f;
+    z-index: 1000;
+}
+
+.nav-container {
+    width: 95%;
+    margin: 0 auto;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    direction: ltr !important;
+}
+
+#logo {
+    flex-shrink: 0;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.4rem;
+    margin: 0;
+    padding: 0;
+    direction: ltr !important;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a,
+.lang-btn {
+    min-width: 92px;
+    height: 44px;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.nav-links a.active {
+    background: var(--primary);
+    color: #000 !important;
+    border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        min-height: 72px;
+    }
+
+    .menu-toggle {
+        display: block;
+        z-index: 1002;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+        background: rgba(30, 30, 30, 0.98);
+        padding: 1rem 0;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li,
+    .nav-links a,
+    .lang-btn {
+        width: 90%;
+    }
+}
+.nav-profile-avatar {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 2px solid #00ff88;
+
+    box-shadow:
+        0 0 12px rgba(0,255,136,0.45);
+
+    transition: 0.25s ease;
+}
+
+.nav-profile-avatar:hover {
+    transform: scale(1.08);
+}
+
+.default-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #00ff88,
+        #00bfff
+    );
+
+    color: #000;
+
+    font-weight: 700;
+
+    font-size: 1rem;
+}
+body.home-font-test,
+body.home-font-test * {
+    font-family: "Exo 2", sans-serif !important;
+}
+body,
+body * {
+    font-family: "Exo 2", sans-serif !important;
+}
