@@ -31,41 +31,53 @@
     </div>
 </nav>
 
-<main class="account-clean-page">
+<main class="container profile-pro-page">
 
-    <section class="account-clean-header">
-        <div class="profile-photo-wrapper account-clean-avatar" title="Change profile picture">
-            <img id="profile-photo" src="" alt="Profile Photo">
-            <div class="profile-avatar" id="default-avatar">🎮</div>
-            <div class="photo-overlay" data-en="Change" data-ar="تغيير">Change</div>
-        </div>
+    <section class="profile-cover-card">
+        <div class="profile-cover-content">
 
-        <input type="file" id="profile-image-input" accept="image/*" hidden>
-
-        <div class="account-clean-info">
-            <span class="account-label" data-en="PLAYER PROFILE" data-ar="ملف اللاعب">
-                PLAYER PROFILE
-            </span>
-
-            <h1 id="welcome-user">Loading...</h1>
-            <p id="user-email"></p>
-
-            <div class="account-clean-badges">
-                <span id="member-info" data-en="PixelPlay Member" data-ar="عضو في PixelPlay">
-                    PixelPlay Member
-                </span>
-
-                <span id="profile-badge" data-en="PixelPlay Gamer" data-ar="PixelPlay Gamer">
-                    PixelPlay Gamer
-                </span>
+            <div class="profile-photo-wrapper profile-pro-avatar" title="Change profile picture">
+                <img id="profile-photo" src="" alt="Profile Photo">
+                <div class="profile-avatar" id="default-avatar">🎮</div>
+                <div class="photo-overlay" data-en="Change" data-ar="تغيير">Change</div>
             </div>
+
+            <input type="file" id="profile-image-input" accept="image/*" hidden>
+
+            <div class="profile-pro-info">
+                <span class="section-kicker" data-en="PLAYER PROFILE" data-ar="ملف اللاعب">
+                    PLAYER PROFILE
+                </span>
+
+                <h1 id="welcome-user">Loading...</h1>
+                <p id="user-email"></p>
+
+                <div class="profile-pro-badges">
+                    <span id="member-info" data-en="PixelPlay Member" data-ar="عضو في PixelPlay">
+                        PixelPlay Member
+                    </span>
+
+                    <span id="profile-badge" data-en="PixelPlay Gamer" data-ar="PixelPlay Gamer">
+                        PixelPlay Gamer
+                    </span>
+                </div>
+            </div>
+
+            <button class="profile-edit-shortcut" id="open-edit-profile"
+                    data-en="Edit" data-ar="تعديل">
+                Edit
+            </button>
+<button class="profile-notification-btn" id="open-notifications">
+    🔔
+    <span id="notification-badge">0</span>
+</button>
         </div>
     </section>
 
-    <section class="account-clean-stats">
+    <section class="profile-stats-strip">
         <div>
-            <strong id="wishlist-count">0</strong>
-            <span data-en="Saved Games" data-ar="الألعاب المحفوظة">Saved Games</span>
+            <strong id="library-count">0</strong>
+            <span data-en="Library" data-ar="المكتبة">Library</span>
         </div>
 
         <div>
@@ -73,18 +85,46 @@
             <span data-en="Reviews" data-ar="التقييمات">Reviews</span>
         </div>
 
-        <div>
-            <strong id="average-rating">0.0</strong>
-            <span data-en="Avg Rating" data-ar="متوسط التقييم">Avg Rating</span>
+        <div class="social-stat" data-list="followers">
+            <strong id="followers-count">0</strong>
+            <span data-en="Followers" data-ar="المتابِعون">Followers</span>
+        </div>
+
+        <div class="social-stat" data-list="following">
+            <strong id="following-count">0</strong>
+            <span data-en="Following" data-ar="المتابَعون">Following</span>
         </div>
     </section>
 
-    <section class="account-clean-content">
+    <section class="profile-main-clean">
 
-        <div class="account-clean-main">
-            <div class="account-section-title">
-                <span data-en="ACTIVITY" data-ar="النشاط">ACTIVITY</span>
-                <h2 data-en="Reviews" data-ar="التقييمات">Reviews</h2>
+        <section class="profile-section-block">
+            <div class="profile-section-head">
+                <div>
+                    <span data-en="LIBRARY" data-ar="المكتبة">LIBRARY</span>
+                    <h2 data-en="My Games" data-ar="ألعابي">My Games</h2>
+                </div>
+
+                <button class="profile-text-btn" onclick="location.href='wishlist.html'"
+                        data-en="View Library" data-ar="عرض المكتبة">
+                    View Library
+                </button>
+            </div>
+
+            <div class="profile-mini-library">
+                <p data-en="Track your games by status: Want to Play, Playing, Completed, On Hold, or Dropped."
+                   data-ar="تابع ألعابك حسب الحالة: أريد لعبها، ألعبها الآن، مكتملة، مؤجلة، أو متروكة.">
+                    Track your games by status: Want to Play, Playing, Completed, On Hold, or Dropped.
+                </p>
+            </div>
+        </section>
+
+        <section class="profile-section-block">
+            <div class="profile-section-head">
+                <div>
+                    <span data-en="ACTIVITY" data-ar="النشاط">ACTIVITY</span>
+                    <h2 data-en="Recent Reviews" data-ar="آخر التقييمات">Recent Reviews</h2>
+                </div>
             </div>
 
             <div id="my-reviews-list">
@@ -92,56 +132,75 @@
                     Loading reviews...
                 </p>
             </div>
-        </div>
+        </section>
 
-        <aside class="account-clean-side">
-            <div class="account-section-title">
-                <span data-en="SETTINGS" data-ar="الإعدادات">SETTINGS</span>
-                <h2 data-en="Profile" data-ar="الملف">Profile</h2>
-            </div>
-
-            <div class="form-group">
-                <label for="display-name-input" data-en="Display Name" data-ar="اسم العرض">
-                    Display Name
-                </label>
-
-                <input type="text" id="display-name-input"
-                       placeholder="Enter display name"
-                       data-en-placeholder="Enter display name"
-                       data-ar-placeholder="اكتب اسم العرض">
-            </div>
-
-            <button class="cta-button" id="save-profile-btn"
-                    data-en="Save"
-                    data-ar="حفظ">
-                Save
+        <section class="profile-actions-row">
+            <button onclick="location.href='wishlist.html'" data-en="My Library" data-ar="مكتبتي">
+                My Library
             </button>
 
-            <div class="account-clean-actions">
-                <button class="plain-link-btn" onclick="location.href='wishlist.html'"
-                        data-en="My Wishlist"
-                        data-ar="قائمتي">
-                    My Wishlist
-                </button>
+            <button onclick="location.href='games.html'" data-en="Explore Games" data-ar="استكشف الألعاب">
+                Explore Games
+            </button>
 
-                <button class="plain-link-btn" onclick="location.href='games.html'"
-                        data-en="Explore Games"
-                        data-ar="استكشف الألعاب">
-                    Explore Games
-                </button>
-
-                <button class="plain-link-btn danger" id="logout-btn"
-                        data-en="Logout"
-                        data-ar="تسجيل الخروج">
-                    Logout
-                </button>
-            </div>
-        </aside>
+            <button id="logout-btn" class="danger" data-en="Logout" data-ar="تسجيل الخروج">
+                Logout
+            </button>
+        </section>
 
     </section>
 
 </main>
 
+<div id="edit-profile-modal" class="edit-profile-modal">
+    <div class="edit-profile-box">
+        <button id="close-edit-profile" class="edit-profile-close">×</button>
+
+        <span class="section-kicker" data-en="PROFILE SETTINGS" data-ar="إعدادات الحساب">
+            PROFILE SETTINGS
+        </span>
+
+        <h2 data-en="Edit Profile" data-ar="تعديل الملف">
+            Edit Profile
+        </h2>
+
+        <div class="form-group">
+            <label for="display-name-input" data-en="Display Name" data-ar="اسم العرض">
+                Display Name
+            </label>
+
+            <input type="text" id="display-name-input"
+                   placeholder="Enter display name"
+                   data-en-placeholder="Enter display name"
+                   data-ar-placeholder="اكتب اسم العرض">
+        </div>
+
+        <button class="cta-button" id="save-profile-btn"
+                data-en="Save Changes"
+                data-ar="حفظ التغييرات">
+            Save Changes
+        </button>
+    </div>
+</div>
+
+<div id="social-modal" class="social-modal">
+    <div class="social-modal-box">
+        <button id="close-social-modal" class="social-modal-close">×</button>
+        <h2 id="social-modal-title">Players</h2>
+        <div id="social-modal-list"></div>
+    </div>
+</div>
+<div id="notifications-modal" class="social-modal">
+    <div class="social-modal-box">
+        <button id="close-notifications-modal" class="social-modal-close">×</button>
+
+        <h2>Notifications</h2>
+
+        <div id="notifications-list">
+            <p style="color:#aaa;">Loading notifications...</p>
+        </div>
+    </div>
+</div>
 <footer class="site-footer">
     <p>© 2026 PixelPlay. All rights reserved.</p>
     <span data-en="Built with passion for gaming 🎮" data-ar="صُنع بشغف لعالم الألعاب 🎮">
@@ -152,6 +211,8 @@
 <script type="module" src="navbar-auth.js"></script>
 <script type="module" src="account.js"></script>
 <script src="script.js"></script>
+<script type="module" src="friends.js"></script>
+<script type="module" src="notifications.js"></script>
 <script src="language.js"></script>
 </body>
 </html>

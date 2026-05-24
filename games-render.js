@@ -65,7 +65,7 @@ comingSoonGames.forEach((game) => {
                     <p class="release-date">Release: ${game.releaseDate}</p>
                     <p style="padding: 0 1rem 1rem; color:#ccc;">${game.genre} • ${game.platform}</p>
                     <button class="details-btn" onclick="openGameDetails('${game.id}')">View Details</button>
-                    <button class="wishlist-btn" onclick="addToWishlist(this)">+ Wishlist</button>
+                    <button class="wishlist-btn" onclick="addToWishlist(this)">+ Library</button>
                 </div>
             `;
         } else {
@@ -79,8 +79,7 @@ comingSoonGames.forEach((game) => {
                     <td data-label="Status"><span class="status-badge">${game.status}</span></td>
                     <td data-label="Action">
                         <button class="details-btn" onclick="openGameDetails('${game.id}')">View Details</button>
-                        <button class="wishlist-btn" onclick="addToWishlist(this)">+ Wishlist</button>
-                    </td>
+<button class="wishlist-btn" onclick="addToWishlist(this)">+ Library</button>                    </td>
                 </tr>
             `;
         }
@@ -148,7 +147,7 @@ window.openGameDetails = async function (gameId) {
 
     window.setReviewGame(selectedGame.title);
 
-    modalWishlistBtn.textContent = "+ Add to Wishlist";
+    modalWishlistBtn.textContent = "+ Add to Library";
     modalWishlistBtn.disabled = false;
 
     if (window.checkIfGameSaved) {
@@ -162,21 +161,12 @@ window.openGameDetails = async function (gameId) {
 
     gameModal.style.display = "flex";
 };
-
 modalWishlistBtn.addEventListener("click", async () => {
     if (!selectedGame) return;
 
-    const fakeButton = document.createElement("button");
-    fakeButton.innerHTML = `
-        <h3>${selectedGame.title}</h3>
-        <p class="release-date">Release: ${selectedGame.releaseDate}</p>
-    `;
+    await window.addSelectedGameToLibrary(selectedGame);
 
-    fakeButton.closest = () => fakeButton;
-
-    await window.addToWishlist(fakeButton);
-
-    modalWishlistBtn.textContent = fakeButton.textContent || "Added ✓";
+    modalWishlistBtn.textContent = "In Library";
     modalWishlistBtn.disabled = true;
 });
 

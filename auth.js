@@ -53,7 +53,12 @@ async function saveUserToFirestore(user, name) {
         userId: user.uid,
         name: name || user.displayName || user.email.split("@")[0],
         email: user.email,
-        createdAt: serverTimestamp()
+        photoKey: `pixelplay-profile-image-${user.uid}`,
+        bio: "PixelPlay Gamer",
+        followersCount: 0,
+        followingCount: 0,
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp()
     }, { merge: true });
 }
 

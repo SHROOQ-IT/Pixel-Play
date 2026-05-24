@@ -17,7 +17,6 @@ const welcomeUser = document.getElementById("welcome-user");
 const userEmail = document.getElementById("user-email");
 const wishlistCount = document.getElementById("wishlist-count");
 const reviewsCount = document.getElementById("reviews-count");
-const averageRating = document.getElementById("average-rating");
 const profileBadge = document.getElementById("profile-badge");
 const myReviewsList = document.getElementById("my-reviews-list");
 const logoutBtn = document.getElementById("logout-btn");
@@ -36,8 +35,8 @@ function updateWelcomeName(name) {
 
     welcomeUser.textContent =
         currentLang === "ar"
-            ? ` مرحبًا ${name}`
-            : ` Welcome ${name}`;
+            ? `مرحبًا ${name}`
+            : `Welcome ${name}`;
 }
 
 function hideEmail(email) {
@@ -131,13 +130,13 @@ onAuthStateChanged(auth, async (user) => {
 
     loadProfileImage(user.uid);
 
-    const wishlistQuery = query(
-        collection(db, "wishlists"),
+    const libraryQuery = query(
+        collection(db, "libraries"),
         where("userId", "==", user.uid)
     );
 
-    const wishlistSnapshot = await getDocs(wishlistQuery);
-    wishlistCount.textContent = wishlistSnapshot.size;
+    const librarySnapshot = await getDocs(libraryQuery);
+    wishlistCount.textContent = librarySnapshot.size;
 
     const reviewsQuery = query(
         collection(db, "reviews"),
@@ -150,7 +149,6 @@ onAuthStateChanged(auth, async (user) => {
     let totalRating = 0;
 
     if (reviewsSnapshot.empty) {
-        averageRating.textContent = "0.0";
 
         myReviewsList.innerHTML = `
             <div class="review-card">
@@ -175,11 +173,10 @@ onAuthStateChanged(auth, async (user) => {
             `;
         });
 
-        const avg = totalRating / reviewsSnapshot.size;
-        averageRating.textContent = avg.toFixed(1);
+
     }
 
-    if (wishlistSnapshot.size >= 5 || reviewsSnapshot.size >= 3) {
+    if (librarySnapshot.size >= 5 || reviewsSnapshot.size >= 3) {
         profileBadge.textContent = "Badge: Active Gamer";
     } else {
         profileBadge.textContent = "Badge: PixelPlay Gamer";
@@ -213,4 +210,21 @@ saveProfileBtn.addEventListener("click", async () => {
 logoutBtn.addEventListener("click", async () => {
     await signOut(auth);
     window.location.href = "login.html";
+});
+const openEditProfileBtn = document.getElementById("open-edit-profile");
+const editProfileModal = document.getElementById("edit-profile-modal");
+const closeEditProfileBtn = document.getElementById("close-edit-profile");
+
+openEditProfileBtn?.addEventListener("click", () => {
+    editProfileModal.classList.add("active");
+});
+
+closeEditProfileBtn?.addEventListener("click", () => {
+    editProfileModal.classList.remove("active");
+});
+
+editProfileModal?.addEventListener("click", (event) => {
+    if (event.target === editProfileModal) {
+        editProfileModal.classList.remove("active");
+    }
 });

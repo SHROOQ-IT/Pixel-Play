@@ -92,7 +92,29 @@
             </p>
         </div>
     </section>
+   <section class="find-players-section">
+    <div class="section-heading">
+        <div>
+            <span class="section-kicker" data-en="FIND PLAYERS" data-ar="ابحث عن لاعبين">
+                FIND PLAYERS
+            </span>
+            <h2 data-en="Connect with players" data-ar="تواصل مع اللاعبين">
+                Connect with players
+            </h2>
+        </div>
+    </div>
 
+    <div class="player-search-box">
+        <input type="text" id="player-search-input"
+               placeholder="Search by player name..."
+               data-en-placeholder="Search by player name..."
+               data-ar-placeholder="ابحث باسم اللاعب...">
+    </div>
+
+    <div id="players-list" class="players-follow-grid">
+        <p style="color:#ccc;">Loading players...</p>
+    </div>
+</section>
     <section class="hub-main-layout">
 
         <section class="hub-compose-card">
@@ -147,7 +169,7 @@
 
             <div class="hub-topic-list">
                 <span>Game Drops</span>
-                <span>Wishlist Ideas</span>
+                <span>library Ideas</span>
                 <span>Player Reviews</span>
                 <span>Future Features</span>
                 <span>Mobile Games</span>
@@ -187,6 +209,7 @@
 <script type="module" src="navbar-auth.js"></script>
 <script type="module" src="hub.js"></script>
 <script src="script.js"></script>
+<script type="module" src="friends.js"></script>
 <script src="language.js"></script>
 </body>
 </html>
