@@ -84,3 +84,9 @@ if (menuToggle && navLinks) {
     });
 
 }
+const searchToggle = document.getElementById("user-search-toggle");
+const searchModal = document.getElementById("user-search-modal");
+
+searchToggle?.addEventListener("click", () => {
+    searchModal?.classList.toggle("active");
+});

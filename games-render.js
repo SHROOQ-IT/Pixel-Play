@@ -1,5 +1,6 @@
 import { games } from "./games-data.js";
 import { fetchPopularGames } from "./rawg-api.js";
+import { fetchFreeGames } from "./free-games-api.js";
 
 const gameTableBody = document.getElementById("games-table-body");
 const comingSoonContainer = document.getElementById("coming-soon-games");
@@ -36,34 +37,27 @@ function saveRecentlyViewed(game) {
     });
 
     viewedGames = viewedGames.slice(0, 4);
-
     localStorage.setItem("recentlyViewedGames", JSON.stringify(viewedGames));
 }
 
 function renderGames(filteredGames = activeGames) {
     gameTableBody.innerHTML = "";
     comingSoonContainer.innerHTML = "";
-    const comingSoonGames = games.filter((game) => game.status === "Coming Soon");
-
-comingSoonGames.forEach((game) => {
-    comingSoonContainer.innerHTML += `
-        <div class="game-card">
-            <img src="${game.image}" alt="${game.title}" onerror="this.src='assests/images/games/upcoming2.jpg'">
-            <h3>${game.title}</h3>
-            <p class="release-date">Release: ${game.releaseDate}</p>
-            <p style="padding: 0 1rem 1rem; color:#ccc;">${game.genre} • ${game.platform}</p>
-            <button class="details-btn" onclick="openGameDetails('${game.id}')">View Details</button>
-        </div>
-    `;
-});
 
     filteredGames.forEach((game) => {
         if (game.status === "Coming Soon") {
             comingSoonContainer.innerHTML += `
                 <div class="game-card">
-<img src="${game.image}" alt="${game.title}" onerror="this.src='assests/images/games/upcoming2.jpg'">                    <h3>${game.title}</h3>
+                    <img src="${game.image}" alt="${game.title}" onerror="this.src='assests/images/games/upcoming2.jpg'">
+                    <h3>${game.title}</h3>
                     <p class="release-date">Release: ${game.releaseDate}</p>
-                    <p style="padding: 0 1rem 1rem; color:#ccc;">${game.genre} • ${game.platform}</p>
+${
+    game.status === "Free"
+        ? `<span class="free-game-badge" style="margin: 0 1rem 0.8rem;">FREE TO PLAY</span>`
+        : ""
+}
+
+<p style="padding: 0 1rem 1rem; color:#ccc;">${game.genre} • ${game.platform}</p>
                     <button class="details-btn" onclick="openGameDetails('${game.id}')">View Details</button>
                     <button class="wishlist-btn" onclick="addToWishlist(this)">+ Library</button>
                 </div>
@@ -75,11 +69,17 @@ comingSoonGames.forEach((game) => {
                     <td data-label="Genre">${game.genre}</td>
                     <td data-label="Platform">${game.platform}</td>
                     <td data-label="Release Date">${game.releaseDate}</td>
-                    <td data-label="Rating">${game.rating}</td>
-                    <td data-label="Status"><span class="status-badge">${game.status}</span></td>
+<td data-label="Rating">
+    ${
+        game.status === "Free"
+            ? `<span class="free-game-badge">FREE</span>`
+            : game.rating
+    }
+</td>                    <td data-label="Status"><span class="status-badge">${game.status}</span></td>
                     <td data-label="Action">
                         <button class="details-btn" onclick="openGameDetails('${game.id}')">View Details</button>
-<button class="wishlist-btn" onclick="addToWishlist(this)">+ Library</button>                    </td>
+                        <button class="wishlist-btn" onclick="addToWishlist(this)">+ Library</button>
+                    </td>
                 </tr>
             `;
         }
@@ -93,9 +93,23 @@ function filterGames() {
     const selectedSort = sortFilter.value;
 
     let filteredGames = activeGames.filter((game) => {
+        const gamePlatform = game.platform.toLowerCase();
+
         const matchesSearch = game.title.toLowerCase().includes(searchText);
         const matchesGenre = selectedGenre === "all" || game.genre === selectedGenre;
-        const matchesPlatform = selectedPlatform === "all" || game.platform.includes(selectedPlatform);
+
+        const matchesPlatform =
+            selectedPlatform === "all" ||
+            (selectedPlatform === "mobile" &&
+                (
+                    gamePlatform.includes("mobile") ||
+                    gamePlatform.includes("ios") ||
+                    gamePlatform.includes("android") ||
+                    gamePlatform.includes("iphone") ||
+                    gamePlatform.includes("ipad")
+                )
+            ) ||
+            gamePlatform.includes(selectedPlatform.toLowerCase());
 
         return matchesSearch && matchesGenre && matchesPlatform;
     });
@@ -124,8 +138,9 @@ window.openGameDetails = async function (gameId) {
 
     modalImage.src = selectedGame.image;
     modalImage.onerror = () => {
-    modalImage.src = "assests/images/games/upcoming2.jpg";
-};
+        modalImage.src = "assests/images/games/upcoming2.jpg";
+    };
+
     modalTitle.textContent = selectedGame.title;
     modalDescription.textContent = selectedGame.description;
 
@@ -154,13 +169,14 @@ window.openGameDetails = async function (gameId) {
         const saved = await window.checkIfGameSaved(selectedGame.title);
 
         if (saved) {
-            modalWishlistBtn.textContent = "Already Added";
+            modalWishlistBtn.textContent = "In Library";
             modalWishlistBtn.disabled = true;
         }
     }
 
     gameModal.style.display = "flex";
 };
+
 modalWishlistBtn.addEventListener("click", async () => {
     if (!selectedGame) return;
 
@@ -187,36 +203,34 @@ sortFilter.addEventListener("change", filterGames);
 
 async function loadRAWGGames() {
     const rawgGames = await fetchPopularGames();
+    const freeGames = await fetchFreeGames();
 
-    if (!rawgGames || rawgGames.length === 0) {
-        activeGames = games;
-        renderGames(activeGames);
-        return;
-    }
+    console.log("Free games loaded:", freeGames);
 
-    activeGames = rawgGames.map((game) => ({
-        id: game.slug,
-        title: game.name,
-        genre: game.genres?.[0]?.name || "Action",
-        platform: game.platforms?.map((item) => item.platform.name).join(", ") || "PC",
-        releaseDate: game.released || "Unknown",
-        rating: game.rating ? `${game.rating}/5` : "Not rated",
-        ratingScore: game.rating || 0,
-        status: game.rating >= 4.5 ? "Top Rated" : "Trending",
-image: game.background_image || game.short_screenshots?.[0]?.image || "assests/images/games/upcoming2.jpg",        description:
-            game.tags?.map((tag) => tag.name).slice(0, 6).join(", ") ||
-            "Popular game powered by RAWG API.",
-        bestFor: game.genres?.[0]?.name
-            ? `${game.genres[0].name} fans`
-            : "Players looking for new games",
-        difficulty:
-            game.rating >= 4.5 ? "Hard" :
-            game.rating >= 3.5 ? "Medium" :
-            "Easy",
-        whyPlay: "Recommended because it is currently popular in the RAWG games database."
-    }));
+    const apiGames = rawgGames && rawgGames.length > 0
+        ? rawgGames.map((game) => ({
+            id: game.slug,
+            title: game.name,
+            genre: game.genres?.[0]?.name || "Action",
+            platform: game.platforms?.map((item) => item.platform.name).join(", ") || "PC",
+            releaseDate: game.released || "Unknown",
+            rating: game.rating ? `${game.rating}/5` : "Not rated",
+            ratingScore: game.rating || 0,
+            status: game.rating >= 4.5 ? "Top Rated" : "Trending",
+            image: game.background_image || game.short_screenshots?.[0]?.image || "assests/images/games/upcoming2.jpg",
+            description: "Popular game powered by RAWG API.",
+            bestFor: "Players looking for new games",
+            difficulty: "Medium",
+            whyPlay: "Recommended because it is currently popular."
+        }))
+        : [];
+
+    activeGames = [
+        ...games,
+        ...apiGames,
+        ...freeGames
+    ];
 
     renderGames(activeGames);
 }
-
 loadRAWGGames();

@@ -10,7 +10,10 @@ import {
     collection,
     query,
     where,
-    getDocs
+    getDocs,
+    doc,
+    updateDoc,
+    getDoc
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const welcomeUser = document.getElementById("welcome-user");
@@ -24,6 +27,7 @@ const logoutBtn = document.getElementById("logout-btn");
 const displayNameInput = document.getElementById("display-name-input");
 const profileImageInput = document.getElementById("profile-image-input");
 const saveProfileBtn = document.getElementById("save-profile-btn");
+const profilePrivacySelect = document.getElementById("profile-privacy-select");
 const profilePhoto = document.getElementById("profile-photo");
 const defaultAvatar = document.getElementById("default-avatar");
 const profilePhotoWrapper = document.querySelector(".profile-photo-wrapper");
@@ -127,7 +131,14 @@ onAuthStateChanged(auth, async (user) => {
     updateWelcomeName(userName);
     userEmail.textContent = hideEmail(user.email);
     displayNameInput.value = userName;
+   const userDoc = await getDoc(doc(db, "users", user.uid));
 
+if (userDoc.exists()) {
+    const userData = userDoc.data();
+
+    profilePrivacySelect.value =
+        userData.profilePrivacy || "public";
+}
     loadProfileImage(user.uid);
 
     const libraryQuery = query(
@@ -187,7 +198,7 @@ saveProfileBtn.addEventListener("click", async () => {
     if (!currentUser) return;
 
     const newDisplayName = displayNameInput.value.trim();
-
+const selectedPrivacy = profilePrivacySelect.value;
     if (!newDisplayName) {
         showToast("Please enter a display name.", "error");
         return;
@@ -199,6 +210,9 @@ saveProfileBtn.addEventListener("click", async () => {
         });
 
         updateWelcomeName(newDisplayName);
+      await updateDoc(doc(db, "users", currentUser.uid), {
+    profilePrivacy: selectedPrivacy
+});
 
         showToast("Profile updated successfully! 👤");
 

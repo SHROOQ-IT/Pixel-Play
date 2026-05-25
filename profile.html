@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library | PixelPlay</title>
+    <title>Player Profile | PixelPlay</title>
     <link rel="icon" type="image/png" href="assests/images/games/android-chrome-512x512.png">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -15,9 +15,7 @@
         <div id="logo">
             <span style="color:#00ff00;">Pixel</span><span style="color:#ff00ff;">Play</span>
         </div>
-
         <div class="menu-toggle" id="menu-toggle">☰</div>
-
         <ul class="nav-links">
            <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
 <li><a href="games.html" data-en="Games" data-ar="الألعاب">Games</a></li>
@@ -51,61 +49,79 @@
         </div>
     </div>
 </div>
-<main class="container library-page-premium">
+<main class="container profile-pro-page">
 
-    <section class="library-hero">
+    <section class="profile-cover-card">
+        <div class="profile-cover-content">
+            <div class="public-profile-avatar">🎮</div>
+
+            <div class="profile-pro-info">
+                <span class="section-kicker">PLAYER PROFILE</span>
+                <h1 id="public-player-name">Loading...</h1>
+                <p id="public-player-bio">PixelPlay Gamer</p>
+            </div>
+
+            <button class="profile-edit-shortcut" id="public-follow-btn">
+                Follow
+            </button>
+        </div>
+    </section>
+
+    <section class="profile-stats-strip">
         <div>
-            <span class="section-kicker" data-en="MY LIBRARY" data-ar="مكتبتي">
-                MY LIBRARY
-            </span>
-
-            <h1 data-en="Track every game your way."
-                data-ar="تابع ألعابك بطريقتك.">
-                Track every game your way.
-            </h1>
-
-            <p data-en="Organize your games by status: Want to Play, Playing, Completed, On Hold, or Dropped."
-               data-ar="رتّب ألعابك حسب حالتها: أريد لعبها، ألعبها الآن، مكتملة، مؤجلة، أو متروكة.">
-                Organize your games by status: Want to Play, Playing, Completed, On Hold, or Dropped.
-            </p>
+            <strong id="public-library-count">0</strong>
+            <span>Library</span>
         </div>
 
-        <button class="cta-button" onclick="location.href='games.html'"
-                data-en="Explore Games"
-                data-ar="استكشف الألعاب">
-            Explore Games
-        </button>
-    </section>
-
-    <section class="library-status-tabs">
-        <button class="library-tab active" data-status="all">All</button>
-        <button class="library-tab" data-status="Want to Play">Want to Play</button>
-        <button class="library-tab" data-status="Playing">Playing</button>
-        <button class="library-tab" data-status="Completed">Completed</button>
-        <button class="library-tab" data-status="On Hold">On Hold</button>
-        <button class="library-tab" data-status="Dropped">Dropped</button>
-    </section>
-
-    <section class="library-grid" id="wishlist-container">
-        <div class="games-loader">
-            <div class="loader-orbit"></div>
-            <p data-en="Loading your library..." data-ar="جاري تحميل مكتبتك...">
-                Loading your library...
-            </p>
+        <div>
+            <strong id="public-reviews-count">0</strong>
+            <span>Reviews</span>
         </div>
+
+        <div>
+            <strong id="public-followers-count">0</strong>
+            <span>Followers</span>
+        </div>
+    </section>
+
+    <section class="profile-main-clean">
+
+        <section class="profile-section-block">
+            <div class="profile-section-head">
+                <div>
+                    <span>LIBRARY</span>
+                    <h2>Games</h2>
+                </div>
+            </div>
+
+            <div id="public-library-list">
+                <p style="color:#aaa;">Loading library...</p>
+            </div>
+        </section>
+
+        <section class="profile-section-block">
+            <div class="profile-section-head">
+                <div>
+                    <span>ACTIVITY</span>
+                    <h2>Reviews</h2>
+                </div>
+            </div>
+
+            <div id="public-reviews-list">
+                <p style="color:#aaa;">Loading reviews...</p>
+            </div>
+        </section>
+
     </section>
 
 </main>
 
 <footer class="site-footer">
     <p>© 2026 PixelPlay. All rights reserved.</p>
-    <span data-en="Built with passion for gaming 🎮" data-ar="صُنع بشغف لعالم الألعاب 🎮">
-        Built with passion for gaming 🎮
-    </span>
 </footer>
 
 <script type="module" src="navbar-auth.js"></script>
-<script type="module" src="wishlist-page.js"></script>
+<script type="module" src="public-profile.js"></script>
 <script src="script.js"></script>
 <script type="module" src="global-search.js"></script>
 <script src="language.js"></script>

@@ -48,6 +48,11 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 async function loadLibrary() {
+    libraryContainer.innerHTML = `
+    <div class="loading-skeleton skeleton-card"></div>
+    <div class="loading-skeleton skeleton-card"></div>
+    <div class="loading-skeleton skeleton-card"></div>
+`;
     try {
         const q = query(
             collection(db, "libraries"),

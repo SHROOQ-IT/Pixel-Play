@@ -8,7 +8,9 @@ import {
     deleteDoc,
     getDoc,
     query,
-    where
+    where,
+    addDoc,
+    serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 import {
@@ -120,8 +122,10 @@ async function renderPlayers(searchText = "") {
                     <div class="player-follow-avatar">🎮</div>
 
                     <div>
-                        <h3>${player.name}</h3>
-                        <p>${player.bio || "PixelPlay Gamer"}</p>
+                       <h3 class="clickable-player-name" onclick="location.href='profile.html?user=${player.userId}'">
+    ${player.name}
+</h3>
+<p>${player.bio || "PixelPlay Gamer"}</p>
                     </div>
                 </div>
 
@@ -224,8 +228,10 @@ async function openSocialModal(type) {
                 <div class="following-avatar">🎮</div>
 
                 <div>
-                    <h3>${player.name}</h3>
-                    <p>${player.bio || "PixelPlay Gamer"}</p>
+                   <h3 class="clickable-player-name" onclick="location.href='profile.html?user=${player.userId}'">
+    ${player.name}
+</h3>
+<p>${player.bio || "PixelPlay Gamer"}</p>
                 </div>
             </div>
         `;
@@ -268,14 +274,23 @@ function attachFollowEvents() {
 }
 
 async function followUser(targetUserId) {
-    await setDoc(
-        doc(db, "following", `${currentUser.uid}_${targetUserId}`),
-        {
-            followerId: currentUser.uid,
-            followingId: targetUserId
-        }
-    );
+await setDoc(
+    doc(db, "following", `${currentUser.uid}_${targetUserId}`),
+    {
+        followerId: currentUser.uid,
+        followingId: targetUserId
+    }
+);
 
+await addDoc(collection(db, "notifications"), {
+    userId: targetUserId,
+    type: "follow",
+    fromUserId: currentUser.uid,
+    fromUserName: currentUser.displayName || "Player",
+    message: `${currentUser.displayName || "Player"} started following you.`,
+    read: false,
+    createdAt: serverTimestamp()
+});
     showToast("Player followed ✓");
 }
 

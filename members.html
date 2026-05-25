@@ -19,18 +19,38 @@
         <div class="menu-toggle" id="menu-toggle">☰</div>
 
         <ul class="nav-links">
-            <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
-            <li><a href="games.html" data-en="Games" data-ar="الألعاب">Games</a></li>
-            <li><a href="tips.html" data-en="Tips" data-ar="النصائح">Tips</a></li>
-            <li><a href="members.html" class="active" data-en="Hub" data-ar="المجتمع">Hub</a></li>
-            <li><a href="about.html" data-en="About" data-ar="عن الموقع">About</a></li>
-            <li><a href="contact.html" data-en="Support" data-ar="الدعم">Support</a></li>
-            <li><a href="login.html" id="auth-link" data-en="Sign In" data-ar="تسجيل الدخول">Sign In</a></li>
-            <li><button id="lang-toggle" class="lang-btn">AR</button></li>
+           <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+<li><a href="games.html" data-en="Games" data-ar="الألعاب">Games</a></li>
+
+<li class="explore-dropdown">
+    <button class="explore-btn">Explore ▾</button>
+    <div class="explore-menu">
+        <a href="tips.html">Tips</a>
+        <a href="members.html">Hub</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Support</a>
+    </div>
+</li>
+
+<li><a href="account.html" id="auth-link" data-en="Account" data-ar="حسابي">Account</a></li>
+<li><button id="user-search-toggle" class="user-search-toggle">🔍</button></li>
+<li><button id="lang-toggle" class="lang-btn">AR</button></li>
         </ul>
     </div>
 </nav>
+<div id="user-search-modal" class="user-search-modal">
+    <div class="user-search-box">
+        <button id="close-user-search" class="user-search-close">×</button>
 
+        <h2>Find Players</h2>
+
+        <input type="text" id="global-user-search-input" placeholder="Search player name...">
+
+        <div id="global-user-search-results">
+            <p style="color:#aaa;">Start typing to find players.</p>
+        </div>
+    </div>
+</div>
 <main class="container hub-page-premium">
 
     <section class="hub-cinematic-hero">
@@ -209,6 +229,7 @@
 <script type="module" src="navbar-auth.js"></script>
 <script type="module" src="hub.js"></script>
 <script src="script.js"></script>
+<script type="module" src="global-search.js"></script>
 <script type="module" src="friends.js"></script>
 <script src="language.js"></script>
 </body>

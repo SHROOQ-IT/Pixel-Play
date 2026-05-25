@@ -6237,3 +6237,418 @@ body * {
         grid-template-columns: 1fr !important;
     }
 }
+@media (max-width: 768px) {
+    .game-modal {
+        align-items: flex-start !important;
+        overflow-y: auto !important;
+        padding: 1rem !important;
+    }
+
+    .modal-content,
+    .premium-modal-content {
+        max-height: 88vh !important;
+        overflow-y: auto !important;
+        margin: 1rem auto !important;
+    }
+}
+.clickable-player-name {
+    cursor: pointer;
+}
+
+.clickable-player-name:hover {
+    color: #00ff66;
+}
+.public-profile-avatar {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00ff66, #ff00ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    box-shadow: 0 0 30px rgba(0,255,100,0.25);
+}
+
+#public-follow-btn.following {
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+}
+.loading-skeleton {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,0.05);
+    border-radius: 18px;
+}
+
+.loading-skeleton::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.08),
+        transparent
+    );
+    animation: skeletonLoading 1.2s infinite;
+}
+
+@keyframes skeletonLoading {
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.skeleton-card {
+    height: 140px;
+    margin-bottom: 1rem;
+    border-radius: 20px;
+}
+
+.skeleton-line {
+    height: 14px;
+    border-radius: 999px;
+    margin-top: 12px;
+}
+
+.skeleton-line.short {
+    width: 40%;
+}
+
+.skeleton-line.medium {
+    width: 70%;
+}
+
+.skeleton-line.long {
+    width: 100%;
+}
+.explore-dropdown {
+    position: relative;
+}
+
+.explore-menu {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    min-width: 190px;
+
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+
+    padding: 10px;
+    display: none;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    z-index: 999;
+}
+
+.explore-menu a {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 12px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.explore-menu a:hover {
+    background: rgba(255,255,255,0.06);
+    color: #00ff66;
+}
+
+.explore-dropdown:hover .explore-menu {
+    display: block;
+}
+
+.user-search-toggle {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.explore-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0;
+}
+
+.explore-btn:hover {
+    color: #00ff66;
+}
+
+.user-search-toggle {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.user-search-toggle:hover {
+    transform: scale(1.1);
+    color: #00ff66;
+}
+
+.explore-dropdown {
+    position: relative;
+}
+
+.explore-menu {
+    position: absolute;
+    top: 180%;
+    right: 0;
+    width: 180px;
+    display: none;
+    flex-direction: column;
+    background: rgba(10,10,20,0.98);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    z-index: 9999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.explore-dropdown:hover .explore-menu {
+    display: flex;
+}
+
+.explore-menu a {
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.explore-menu a:hover {
+    background: rgba(255,255,255,0.05);
+    color: #00ff66;
+}
+
+
+
+.explore-dropdown {
+    position: relative !important;
+}
+
+.explore-menu {
+    position: absolute !important;
+    top: 130% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 180px !important;
+    display: none !important;
+    flex-direction: column !important;
+    background: #111 !important;
+    border-radius: 18px !important;
+    padding: 0.6rem !important;
+    z-index: 99999 !important;
+}
+
+.explore-dropdown.open .explore-menu {
+    display: flex !important;
+}
+
+.explore-menu a {
+    padding: 0.9rem 1rem !important;
+    color: white !important;
+    text-align: center !important;
+    border-radius: 12px !important;
+}
+
+.explore-menu a:hover {
+    background: rgba(255,255,255,0.08) !important;
+    color: #00ff66 !important;
+}
+@media (max-width: 900px) {
+    .nav-links {
+        align-items: center !important;
+    }
+
+    .nav-links li {
+        text-align: center !important;
+    }
+
+    .nav-links a,
+    .explore-btn,
+    .user-search-toggle,
+    .lang-btn {
+        text-align: center !important;
+    }
+}@media (max-width: 900px) {
+    .nav-links {
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .nav-links > li {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .nav-links a,
+    .nav-links button,
+    .explore-btn,
+    .user-search-toggle,
+    .lang-btn {
+        margin: 0 auto !important;
+        text-align: center !important;
+        justify-content: center !important;
+    }
+}
+@media (min-width: 901px) {
+    .nav-container {
+        padding: 1.7rem 5.5rem !important;
+        max-width: 1450px !important;
+        margin: 0 auto !important;
+    }
+
+    .nav-links {
+        gap: 4.5rem !important;
+    }
+
+    #logo {
+        margin-right: 6rem !important;
+    }
+}
+.user-search-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+    padding: 1rem;
+}
+
+.user-search-modal.active {
+    display: flex;
+}
+
+.user-search-box {
+    width: 100%;
+    max-width: 620px;
+    background: #121218;
+    border-radius: 28px;
+    padding: 2rem;
+    position: relative;
+}
+
+.user-search-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#global-user-search-input {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem 1.2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.04);
+    color: white;
+    font-size: 1rem;
+}
+
+#global-user-search-results {
+    margin-top: 1.5rem;
+    max-height: 420px;
+    overflow-y: auto;
+}
+
+.global-search-user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 18px;
+    text-decoration: none;
+    color: white;
+    transition: 0.25s;
+}
+
+.global-search-user:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.global-search-avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#00ff66,#ff00ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}.free-game-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(0,255,100,0.12);
+    border: 1px solid rgba(0,255,100,0.35);
+    color: #00ff66;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+/* FIX GAME DETAILS MODAL SCROLL */
+
+.game-modal {
+    overflow-y: auto !important;
+    align-items: flex-start !important;
+    padding: 2rem 1rem !important;
+}
+
+.modal-content {
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    margin: auto !important;
+    scrollbar-width: thin;
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: rgba(0,255,100,0.45);
+    border-radius: 999px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.06);
+}
+
+@media (max-width: 768px) {
+    .game-modal {
+        padding: 1rem !important;
+    }
+
+    .modal-content {
+        width: 96% !important;
+        max-height: 86vh !important;
+        overflow-y: auto !important;
+    }
+}
