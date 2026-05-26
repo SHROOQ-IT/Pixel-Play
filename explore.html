@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore | PixelPlay</title>
+    <link rel="icon" type="image/png" href="assests/images/games/android-chrome-512x512.png">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav id="main-nav">
+    <div class="nav-container">
+        <div id="logo">
+            <span style="color:#00ff00;">Pixel</span><span style="color:#ff00ff;">Play</span>
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+            <li><a href="games.html" data-en="Games" data-ar="الألعاب">Games</a></li>
+            <li><a href="explore.html" class="active" data-en="Explore" data-ar="استكشاف">Explore</a></li>
+            <li><button id="user-search-toggle" class="user-search-toggle">🔍</button></li>
+            <li><button id="lang-toggle" class="lang-btn">AR</button></li>
+            <li><a href="account.html" id="auth-link" data-en="Account" data-ar="حسابي">Account</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div id="user-search-modal" class="user-search-modal">
+    <div class="user-search-box">
+        <button id="close-user-search" class="user-search-close">×</button>
+        <h2>Find Players</h2>
+        <input type="text" id="global-user-search-input" placeholder="Search player name...">
+        <div id="global-user-search-results">
+            <p style="color:#aaa;">Type at least 2 letters to search players.</p>
+        </div>
+    </div>
+</div>
+
+<main class="container explore-page">
+
+    <section class="explore-hero">
+        <div>
+            <span class="section-kicker">PIXELPLAY EXPLORE</span>
+            <h1>One place to discover everything.</h1>
+            <p>
+                Jump into community features, player tips, support pages, and upcoming PixelPlay tools from one clean space.
+            </p>
+        </div>
+
+        <div class="explore-hero-orb">
+            <span>🎮</span>
+        </div>
+    </section>
+
+    <section class="explore-grid">
+
+        <a href="tips.html" class="explore-card main-card">
+            <span class="explore-card-icon">💡</span>
+            <small>TIPS</small>
+            <h2>Player Tips</h2>
+            <p>Read and share useful gaming tips, quick guides, and player advice.</p>
+            <strong>Open Tips →</strong>
+        </a>
+
+        <a href="members.html" class="explore-card">
+            <span class="explore-card-icon">🌐</span>
+            <small>COMMUNITY</small>
+            <h2>PixelPlay Hub</h2>
+            <p>Post thoughts, updates, future ideas, and connect with other players.</p>
+            <strong>Visit Hub →</strong>
+        </a>
+
+        <a href="games.html" class="explore-card">
+            <span class="explore-card-icon">🕹️</span>
+            <small>DISCOVERY</small>
+            <h2>Game Library</h2>
+            <p>Browse games, filter by genre or platform, and add titles to your library.</p>
+            <strong>Explore Games →</strong>
+        </a>
+
+        <a href="account.html" class="explore-card">
+            <span class="explore-card-icon">👤</span>
+            <small>PROFILE</small>
+            <h2>Your Account</h2>
+            <p>Manage your profile, library, reviews, followers, and notifications.</p>
+            <strong>Open Account →</strong>
+        </a>
+
+        <a href="about.html" class="explore-card">
+            <span class="explore-card-icon">✨</span>
+            <small>ABOUT</small>
+            <h2>About PixelPlay</h2>
+            <p>Learn the idea behind PixelPlay and what makes the platform useful.</p>
+            <strong>Learn More →</strong>
+        </a>
+
+        <a href="contact.html" class="explore-card">
+            <span class="explore-card-icon">🛟</span>
+            <small>SUPPORT</small>
+            <h2>Support</h2>
+            <p>Need help, feedback, or want to contact the PixelPlay team?</p>
+            <strong>Get Support →</strong>
+        </a>
+
+    </section>
+
+    <section class="explore-coming">
+        <div>
+            <span class="section-kicker">COMING NEXT</span>
+            <h2>Free Games Zone</h2>
+            <p>We’re preparing a space for free-to-play games so players can find titles they can try without buying.</p>
+        </div>
+
+        <button class="cta-button" onclick="location.href='games.html'">
+            Browse Games
+        </button>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p>© 2026 PixelPlay. All rights reserved.</p>
+    <span>Built with passion for gaming 🎮</span>
+</footer>
+
+<script type="module" src="navbar-auth.js"></script>
+<script type="module" src="global-search.js"></script>
+<script src="script.js"></script>
+<script src="language.js"></script>
+</body>
+</html>

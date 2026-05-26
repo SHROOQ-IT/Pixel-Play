@@ -87,7 +87,9 @@ async function loadPlayers() {
         renderPlayers("");
 
     } catch (error) {
-        playersList.innerHTML = `<p style="color:#ff5c8a;">${error.message}</p>`;
+        if (playersList) {
+            playersList.innerHTML = `<p style="color:#ff5c8a;">${error.message}</p>`;
+        }
     }
 }
 
@@ -117,15 +119,14 @@ async function renderPlayers(searchText = "") {
 
         playersList.innerHTML += `
             <div class="player-follow-card">
-
                 <div class="player-follow-top">
                     <div class="player-follow-avatar">🎮</div>
 
                     <div>
-                       <h3 class="clickable-player-name" onclick="location.href='profile.html?user=${player.userId}'">
-    ${player.name}
-</h3>
-<p>${player.bio || "PixelPlay Gamer"}</p>
+                        <h3 class="clickable-player-name" onclick="location.href='profile.html?user=${player.userId}'">
+                            ${player.name}
+                        </h3>
+                        <p>${player.bio || "PixelPlay Gamer"}</p>
                     </div>
                 </div>
 
@@ -135,7 +136,6 @@ async function renderPlayers(searchText = "") {
                 >
                     ${isFollowing ? "Following" : "Follow"}
                 </button>
-
             </div>
         `;
     }
@@ -159,13 +159,8 @@ async function updateSocialCounts() {
     const followersSnapshot = await getDocs(followersQuery);
     const followingSnapshot = await getDocs(followingQuery);
 
-    if (followersCount) {
-        followersCount.textContent = followersSnapshot.size;
-    }
-
-    if (followingCount) {
-        followingCount.textContent = followingSnapshot.size;
-    }
+    if (followersCount) followersCount.textContent = followersSnapshot.size;
+    if (followingCount) followingCount.textContent = followingSnapshot.size;
 }
 
 async function openSocialModal(type) {
@@ -178,23 +173,12 @@ async function openSocialModal(type) {
             ? "Followers"
             : "Following";
 
-    socialModalList.innerHTML = `
-        <p style="color:#aaa;">Loading...</p>
-    `;
+    socialModalList.innerHTML = `<p style="color:#aaa;">Loading...</p>`;
 
-    let socialQuery;
-
-    if (type === "followers") {
-        socialQuery = query(
-            collection(db, "following"),
-            where("followingId", "==", currentUser.uid)
-        );
-    } else {
-        socialQuery = query(
-            collection(db, "following"),
-            where("followerId", "==", currentUser.uid)
-        );
-    }
+    const socialQuery =
+        type === "followers"
+            ? query(collection(db, "following"), where("followingId", "==", currentUser.uid))
+            : query(collection(db, "following"), where("followerId", "==", currentUser.uid));
 
     const socialSnapshot = await getDocs(socialQuery);
 
@@ -228,10 +212,10 @@ async function openSocialModal(type) {
                 <div class="following-avatar">🎮</div>
 
                 <div>
-                   <h3 class="clickable-player-name" onclick="location.href='profile.html?user=${player.userId}'">
-    ${player.name}
-</h3>
-<p>${player.bio || "PixelPlay Gamer"}</p>
+                    <h3 class="clickable-player-name" onclick="location.href='profile.html?user=${player.userId}'">
+                        ${player.name}
+                    </h3>
+                    <p>${player.bio || "PixelPlay Gamer"}</p>
                 </div>
             </div>
         `;
@@ -274,23 +258,27 @@ function attachFollowEvents() {
 }
 
 async function followUser(targetUserId) {
-await setDoc(
-    doc(db, "following", `${currentUser.uid}_${targetUserId}`),
-    {
-        followerId: currentUser.uid,
-        followingId: targetUserId
-    }
-);
+    await setDoc(
+        doc(db, "following", `${currentUser.uid}_${targetUserId}`),
+        {
+            followerId: currentUser.uid,
+            followingId: targetUserId,
+            createdAt: serverTimestamp()
+        }
+    );
 
-await addDoc(collection(db, "notifications"), {
-    userId: targetUserId,
-    type: "follow",
-    fromUserId: currentUser.uid,
-    fromUserName: currentUser.displayName || "Player",
-    message: `${currentUser.displayName || "Player"} started following you.`,
-    read: false,
-    createdAt: serverTimestamp()
-});
+    if (targetUserId !== currentUser.uid) {
+        await addDoc(collection(db, "notifications"), {
+            userId: targetUserId,
+            type: "follow",
+            fromUserId: currentUser.uid,
+            fromUserName: currentUser.displayName || "Player",
+            message: `${currentUser.displayName || "Player"} started following you.`,
+            read: false,
+            createdAt: serverTimestamp()
+        });
+    }
+
     showToast("Player followed ✓");
 }
 
